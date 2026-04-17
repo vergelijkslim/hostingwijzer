@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vergelijkslim.github.io/hostingwijzer/sitemap-index.xml

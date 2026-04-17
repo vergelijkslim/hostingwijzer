@@ -1,0 +1,20 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+
+export default defineConfig({
+  site: 'https://vergelijkslim.github.io',
+  base: '/hostingwijzer',
+  integrations: [sitemap()],
+  build: {
+    format: 'directory',
+  },
+  vite: {
+    build: {
+      cssMinify: true,
+    },
+  },
+  prefetch: {
+    defaultStrategy: 'viewport',
+  },
+});
