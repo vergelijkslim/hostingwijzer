@@ -3,8 +3,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://vergelijkslim.github.io',
-  base: '/hostingwijzer',
+  site: 'https://vergelijk-uw-hosting.nl',
   integrations: [sitemap()],
   build: {
     format: 'directory',
