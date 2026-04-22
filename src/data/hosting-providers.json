@@ -1,0 +1,594 @@
+{
+  "_meta": {
+    "beschrijving": "Nederlandse webhostingproviders vergelijking",
+    "bijgewerkt": "2026-04-22",
+    "bronnen": [
+      "Officiële provider websites (2025/2026 prijzen)",
+      "Trustpilot NL reviews",
+      "Hostingadvies.nl benchmarks",
+      "Eigen uptime monitoring data"
+    ],
+    "affiliate_tag": "vergelijk05-21"
+  },
+  "providers": [
+    {
+      "id": "siteground",
+      "naam": "SiteGround",
+      "logo_url": "/images/logos/siteground.svg",
+      "website": "https://www.siteground.com",
+      "affiliate_url": "https://www.siteground.com/go/vergelijk05-21",
+      "badges": ["beste-wordpress", "beste-support"],
+      "beoordeling": {
+        "overall": 9.2,
+        "uptime": 9.5,
+        "support": 9.4,
+        "prijs_kwaliteit": 8.6
+      },
+      "plannen": [
+        {
+          "naam": "StartUp",
+          "prijs_per_maand": 3.99,
+          "prijs_per_jaar": 47.88,
+          "opslag_gb": 10,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": true,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "GrowBig",
+          "prijs_per_maand": 6.69,
+          "prijs_per_jaar": 80.28,
+          "opslag_gb": 20,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": "onbeperkt",
+            "sites": "onbeperkt",
+            "staging": true,
+            "cdn": true,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "GoGeek",
+          "prijs_per_maand": 10.69,
+          "prijs_per_jaar": 128.28,
+          "opslag_gb": 40,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": "onbeperkt",
+            "sites": "onbeperkt",
+            "staging": true,
+            "cdn": true,
+            "backup_dagelijks": true,
+            "priority_support": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "transip",
+      "naam": "TransIP",
+      "logo_url": "/images/logos/transip.svg",
+      "website": "https://www.transip.nl",
+      "affiliate_url": "https://www.transip.nl/partner/vergelijk05-21",
+      "badges": ["beste-koop", "meest-populair-nl"],
+      "beoordeling": {
+        "overall": 9.0,
+        "uptime": 9.1,
+        "support": 8.8,
+        "prijs_kwaliteit": 9.3
+      },
+      "plannen": [
+        {
+          "naam": "Basic",
+          "prijs_per_maand": 3.49,
+          "prijs_per_jaar": 41.88,
+          "opslag_gb": 25,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "Advanced",
+          "prijs_per_maand": 5.99,
+          "prijs_per_jaar": 71.88,
+          "opslag_gb": 50,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": 5,
+            "sites": 5,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "Pro",
+          "prijs_per_maand": 9.99,
+          "prijs_per_jaar": 119.88,
+          "opslag_gb": 100,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": "onbeperkt",
+            "sites": "onbeperkt",
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "hostnet",
+      "naam": "Hostnet",
+      "logo_url": "/images/logos/hostnet.svg",
+      "website": "https://www.hostnet.nl",
+      "affiliate_url": "https://www.hostnet.nl/partner/vergelijk05-21",
+      "badges": [],
+      "beoordeling": {
+        "overall": 8.5,
+        "uptime": 8.7,
+        "support": 8.3,
+        "prijs_kwaliteit": 8.2
+      },
+      "plannen": [
+        {
+          "naam": "Starter",
+          "prijs_per_maand": 3.95,
+          "prijs_per_jaar": 47.40,
+          "opslag_gb": 15,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        },
+        {
+          "naam": "Business",
+          "prijs_per_maand": 6.95,
+          "prijs_per_jaar": 83.40,
+          "opslag_gb": 50,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": 10,
+            "sites": 10,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "versio",
+      "naam": "Versio",
+      "logo_url": "/images/logos/versio.svg",
+      "website": "https://www.versio.nl",
+      "affiliate_url": "https://www.versio.nl/webhosting?partner=vergelijk05-21",
+      "badges": ["beste-koop"],
+      "beoordeling": {
+        "overall": 8.7,
+        "uptime": 8.9,
+        "support": 8.5,
+        "prijs_kwaliteit": 9.1
+      },
+      "plannen": [
+        {
+          "naam": "Mini",
+          "prijs_per_maand": 1.99,
+          "prijs_per_jaar": 23.88,
+          "opslag_gb": 5,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        },
+        {
+          "naam": "Small",
+          "prijs_per_maand": 3.49,
+          "prijs_per_jaar": 41.88,
+          "opslag_gb": 20,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 5,
+            "sites": 5,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "Medium",
+          "prijs_per_maand": 5.99,
+          "prijs_per_jaar": 71.88,
+          "opslag_gb": 50,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": 20,
+            "sites": 20,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "mijndomein",
+      "naam": "MijnDomein",
+      "logo_url": "/images/logos/mijndomein.svg",
+      "website": "https://www.mijndomein.nl",
+      "affiliate_url": "https://www.mijndomein.nl/webhosting?partner=vergelijk05-21",
+      "badges": [],
+      "beoordeling": {
+        "overall": 7.8,
+        "uptime": 8.0,
+        "support": 7.5,
+        "prijs_kwaliteit": 8.5
+      },
+      "plannen": [
+        {
+          "naam": "Hosting S",
+          "prijs_per_maand": 1.49,
+          "prijs_per_jaar": 17.88,
+          "opslag_gb": 5,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        },
+        {
+          "naam": "Hosting M",
+          "prijs_per_maand": 2.99,
+          "prijs_per_jaar": 35.88,
+          "opslag_gb": 20,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 5,
+            "sites": 3,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "one",
+      "naam": "ONE.com",
+      "logo_url": "/images/logos/one-com.svg",
+      "website": "https://www.one.com/nl",
+      "affiliate_url": "https://www.one.com/nl/webhosting?affiliate=vergelijk05-21",
+      "badges": [],
+      "beoordeling": {
+        "overall": 8.2,
+        "uptime": 8.4,
+        "support": 8.0,
+        "prijs_kwaliteit": 8.6
+      },
+      "plannen": [
+        {
+          "naam": "Starter",
+          "prijs_per_maand": 2.99,
+          "prijs_per_jaar": 35.88,
+          "opslag_gb": 50,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        },
+        {
+          "naam": "Professional",
+          "prijs_per_maand": 5.99,
+          "prijs_per_jaar": 71.88,
+          "opslag_gb": 150,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 5,
+            "sites": "onbeperkt",
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "strato",
+      "naam": "STRATO",
+      "logo_url": "/images/logos/strato.svg",
+      "website": "https://www.strato.nl",
+      "affiliate_url": "https://www.strato.nl/hosting/?affiliate=vergelijk05-21",
+      "badges": [],
+      "beoordeling": {
+        "overall": 7.9,
+        "uptime": 8.1,
+        "support": 7.6,
+        "prijs_kwaliteit": 8.3
+      },
+      "plannen": [
+        {
+          "naam": "PowerWeb",
+          "prijs_per_maand": 4.00,
+          "prijs_per_jaar": 48.00,
+          "opslag_gb": 100,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 10,
+            "sites": "onbeperkt",
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "cloudways",
+      "naam": "Cloudways",
+      "logo_url": "/images/logos/cloudways.svg",
+      "website": "https://www.cloudways.com",
+      "affiliate_url": "https://www.cloudways.com/en/?id=vergelijk05-21",
+      "badges": ["beste-vps", "beste-performance"],
+      "beoordeling": {
+        "overall": 9.1,
+        "uptime": 9.6,
+        "support": 9.0,
+        "prijs_kwaliteit": 8.4
+      },
+      "plannen": [
+        {
+          "naam": "DO 1GB",
+          "prijs_per_maand": 14.00,
+          "prijs_per_jaar": 168.00,
+          "opslag_gb": 25,
+          "bandbreedte": "1TB",
+          "type": "cloud",
+          "features": {
+            "wordpress": true,
+            "email": false,
+            "ssl": true,
+            "ssh": true,
+            "databases": "onbeperkt",
+            "sites": "onbeperkt",
+            "staging": true,
+            "cdn": true,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "DO 2GB",
+          "prijs_per_maand": 28.00,
+          "prijs_per_jaar": 336.00,
+          "opslag_gb": 50,
+          "bandbreedte": "2TB",
+          "type": "cloud",
+          "features": {
+            "wordpress": true,
+            "email": false,
+            "ssl": true,
+            "ssh": true,
+            "databases": "onbeperkt",
+            "sites": "onbeperkt",
+            "staging": true,
+            "cdn": true,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "antagonist",
+      "naam": "Antagonist",
+      "logo_url": "/images/logos/antagonist.svg",
+      "website": "https://www.antagonist.nl",
+      "affiliate_url": "https://www.antagonist.nl/webhosting/?ref=vergelijk05-21",
+      "badges": ["beste-uptime"],
+      "beoordeling": {
+        "overall": 8.8,
+        "uptime": 9.3,
+        "support": 8.7,
+        "prijs_kwaliteit": 8.5
+      },
+      "plannen": [
+        {
+          "naam": "Web Basic",
+          "prijs_per_maand": 3.25,
+          "prijs_per_jaar": 39.00,
+          "opslag_gb": 10,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        },
+        {
+          "naam": "Web Pro",
+          "prijs_per_maand": 6.75,
+          "prijs_per_jaar": 81.00,
+          "opslag_gb": 30,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": 10,
+            "sites": 10,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "yourhosting",
+      "naam": "YourHosting",
+      "logo_url": "/images/logos/yourhosting.svg",
+      "website": "https://www.yourhosting.nl",
+      "affiliate_url": "https://www.yourhosting.nl/webhosting/?partner=vergelijk05-21",
+      "badges": [],
+      "beoordeling": {
+        "overall": 8.0,
+        "uptime": 8.2,
+        "support": 7.9,
+        "prijs_kwaliteit": 8.7
+      },
+      "plannen": [
+        {
+          "naam": "Starter",
+          "prijs_per_maand": 1.95,
+          "prijs_per_jaar": 23.40,
+          "opslag_gb": 5,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": false,
+            "databases": 1,
+            "sites": 1,
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": false
+          }
+        },
+        {
+          "naam": "Plus",
+          "prijs_per_maand": 4.95,
+          "prijs_per_jaar": 59.40,
+          "opslag_gb": 50,
+          "bandbreedte": "onbeperkt",
+          "type": "shared",
+          "features": {
+            "wordpress": true,
+            "email": true,
+            "ssl": true,
+            "ssh": true,
+            "databases": "onbeperkt",
+            "sites": "onbeperkt",
+            "staging": false,
+            "cdn": false,
+            "backup_dagelijks": true
+          }
+        }
+      ]
+    }
+  ]
+}

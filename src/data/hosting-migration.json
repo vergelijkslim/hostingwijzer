@@ -1,0 +1,223 @@
+{
+  "_meta": {
+    "beschrijving": "Migratie-informatie per Nederlandse webhostingprovider",
+    "bijgewerkt": "2026-04-22",
+    "bronnen": [
+      "Officiële provider algemene voorwaarden",
+      "Provider support documentatie",
+      "Gebruikerservaringen via forums en reviews"
+    ]
+  },
+  "providers": [
+    {
+      "provider_id": "siteground",
+      "naam": "SiteGround",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "30 dagen geld-terug-garantie. Geen opzegkosten."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "EPP-code opvragen via cPanel, dan transfer initiëren bij nieuwe registrar",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Gratis domein transfer uitwaarts. Let op: domein moet ouder zijn dan 60 dagen."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 0.5,
+        "gratis_migratie": true,
+        "migratie_tool": "SiteGround Migrator WordPress plugin",
+        "opmerkingen": "Professionele migratie service inbegrepen bij GoGeek plan. Andere plannen: zelfmigratie met plugin."
+      }
+    },
+    {
+      "provider_id": "transip",
+      "naam": "TransIP",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 0,
+        "opmerkingen": "Geen opzegkosten. Hosting loopt af aan einde contractperiode."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Token opvragen in controlepaneel, daarna transfer bij nieuwe registrar",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Domein transfer is gratis uitwaarts. TransIP vraagt geen transferkosten."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 1,
+        "gratis_migratie": false,
+        "migratie_tool": "Handmatige FTP/cPanel export",
+        "opmerkingen": "Geen automatische migratie service. Backups downloaden via cPanel en uploaden bij TransIP."
+      }
+    },
+    {
+      "provider_id": "hostnet",
+      "naam": "Hostnet",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "Opzegging moet minimaal 30 dagen voor verlengingsdatum plaatsvinden."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Unlock domein + auth-code opvragen via Mijnhostnet panel",
+        "doorlooptijd_dagen": 7,
+        "opmerkingen": "Domein transfer gratis. Hostnet rekent geen uitwaarste transferkosten."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 2,
+        "gratis_migratie": false,
+        "migratie_tool": "cPanel backup tool",
+        "opmerkingen": "Migratie support beschikbaar tegen betaling. Zelfmigratie via cPanel backup."
+      }
+    },
+    {
+      "provider_id": "versio",
+      "naam": "Versio",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 0,
+        "opmerkingen": "Geen opzegkosten. Abonnement stopt automatisch als je niet verlengt."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Auth-code aanvragen in Versio controlepaneel",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Gratis domein transfer uitwaarts."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 1,
+        "gratis_migratie": true,
+        "migratie_tool": "Versio gratis migratie service (WordPress)",
+        "opmerkingen": "Gratis WordPress migratie service voor nieuwe klanten. Aanvragen via support."
+      }
+    },
+    {
+      "provider_id": "mijndomein",
+      "naam": "MijnDomein",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "Opzeggen via klantenservice of online portaal."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Registrarslock opheffen + EPP-code opvragen",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Geen transferkosten. Domein blijft eigendom van klant."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 2,
+        "gratis_migratie": false,
+        "migratie_tool": "FTP + phpMyAdmin export",
+        "opmerkingen": "Geen migratie service. Handmatig exporteren via FTP en database dump."
+      }
+    },
+    {
+      "provider_id": "one",
+      "naam": "ONE.com",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "30 dagen geld-terug-garantie op eerste bestelling."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Auth-code opvragen via ONE.com controlepaneel",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Domein transfer gratis uitwaarts."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 1.5,
+        "gratis_migratie": false,
+        "migratie_tool": "WordPress export tool of cPanel backup",
+        "opmerkingen": "Geen automatische migratie. Wel uitgebreide handleidingen beschikbaar."
+      }
+    },
+    {
+      "provider_id": "strato",
+      "naam": "STRATO",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "Maandelijkse opzegtermijn van 30 dagen."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Authinfo-code aanvragen via STRATO klantenportaal",
+        "doorlooptijd_dagen": 7,
+        "opmerkingen": "Transfer duurt soms langer door verificatieprocedures."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 2,
+        "gratis_migratie": false,
+        "migratie_tool": "FTP + phpMyAdmin",
+        "opmerkingen": "Geen migratie service beschikbaar. Handmatige migratie vereist."
+      }
+    },
+    {
+      "provider_id": "cloudways",
+      "naam": "Cloudways",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 0,
+        "opmerkingen": "Pay-as-you-go model. Server op elk moment te stoppen."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Cloudways beheert geen domeinen zelf. DNS wijzigen via registrar.",
+        "doorlooptijd_dagen": 1,
+        "opmerkingen": "Cloudways is hosting only. Domein blijft bij registrar."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 0.25,
+        "gratis_migratie": true,
+        "migratie_tool": "Cloudways Migrator WordPress plugin of Breeze plugin",
+        "opmerkingen": "Uitstekende migratie tools. Gratis migratie service voor eerste site."
+      }
+    },
+    {
+      "provider_id": "antagonist",
+      "naam": "Antagonist",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "Geen boetes. Opzegging 30 dagen voor verlengingsdatum."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Token opvragen via Antagonist controlepaneel",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Gratis transfer. Antagonist staat bekend om goede ondersteuning bij transfers."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 0.5,
+        "gratis_migratie": true,
+        "migratie_tool": "Gratis professionele migratie service",
+        "opmerkingen": "Antagonist biedt gratis migratie aan voor nieuwe klanten. Aanvragen via support ticket."
+      }
+    },
+    {
+      "provider_id": "yourhosting",
+      "naam": "YourHosting",
+      "opzegkosten": {
+        "bedrag_eur": 0,
+        "opzegtermijn_dagen": 30,
+        "opmerkingen": "Maandelijks opzegbaar."
+      },
+      "domein_transfer": {
+        "kosten_eur": 0,
+        "procedure": "Auth-code aanvragen via YourHosting panel",
+        "doorlooptijd_dagen": 5,
+        "opmerkingen": "Standaard .nl en .com transfers. Gratis uitwaarts."
+      },
+      "migratie": {
+        "geschatte_downtime_uren": 1.5,
+        "gratis_migratie": false,
+        "migratie_tool": "cPanel backup",
+        "opmerkingen": "Handmatige migratie. Support beschikbaar via chat."
+      }
+    }
+  ]
+}
