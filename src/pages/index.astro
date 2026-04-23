@@ -178,6 +178,42 @@ const sections = [
     </div>
   </section>
 
+  <section class="tools-highlight" id="tools">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactieve Tools</h2>
+        <p>Features die ChatGPT niet heeft: live vergelijkers, slimme keuzehulpen en calculators op basis van echte data.</p>
+      </div>
+      <div class="tools-cards">
+        <a href="/tools/welke-hosting/" class="tool-highlight-card featured">
+          <span class="tcard-icon">🧭</span>
+          <div>
+            <span class="tcard-badge">Meest gebruikt</span>
+            <h3>Welke hosting heb ik nodig?</h3>
+            <p>4 vragen → persoonlijke Top 3 aanbeveling</p>
+          </div>
+          <span class="tcard-arrow">→</span>
+        </a>
+        <a href="/tools/vergelijk/" class="tool-highlight-card">
+          <span class="tcard-icon">📊</span>
+          <div>
+            <h3>Providers vergelijken</h3>
+            <p>Sorteer en filter alle Nederlandse providers</p>
+          </div>
+          <span class="tcard-arrow">→</span>
+        </a>
+        <a href="/tools/verhuiskosten/" class="tool-highlight-card">
+          <span class="tcard-icon">🚚</span>
+          <div>
+            <h3>Verhuiskosten Calculator</h3>
+            <p>Bereken wat overstappen je kost</p>
+          </div>
+          <span class="tcard-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="sections" id="onderwerpen">
     <div class="container">
       <div class="section-header">
@@ -264,6 +300,24 @@ const sections = [
 </BaseLayout>
 
 <style>
+  /* Tools highlight section */
+  .tools-highlight { padding: 3rem 0; background: #f8faff; }
+  .tools-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+  .tool-highlight-card {
+    display: flex; align-items: center; gap: 1rem;
+    background: white; border: 2px solid #e5e7eb; border-radius: 14px;
+    padding: 1.25rem 1.5rem; text-decoration: none; color: inherit;
+    transition: all 0.15s;
+  }
+  .tool-highlight-card:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.1); transform: translateY(-2px); }
+  .tool-highlight-card.featured { border-color: #2563eb; background: linear-gradient(135deg, #eff6ff, #dbeafe20); }
+  .tcard-icon { font-size: 2rem; flex-shrink: 0; }
+  .tcard-badge { display: inline-block; background: #2563eb; color: white; font-size: 0.68rem; font-weight: 700; padding: 1px 8px; border-radius: 20px; margin-bottom: 4px; }
+  .tool-highlight-card h3 { margin: 0 0 2px; font-size: 1rem; color: #111827; }
+  .tool-highlight-card p { margin: 0; font-size: 0.82rem; color: #6b7280; }
+  .tcard-arrow { margin-left: auto; font-size: 1.2rem; color: #2563eb; flex-shrink: 0; }
+  @media (max-width: 900px) { .tools-cards { grid-template-columns: 1fr; } }
+
   .hero {
     background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 40%, #2563eb 70%, #3b82f6 100%);
     color: #fff;

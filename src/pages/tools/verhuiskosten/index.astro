@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import migrationData from '../../../data/hosting-migration.json';
+import providersData from '../../../data/hosting-providers.json';
+
+const providers = providersData.providers;
+const migrationMap = Object.fromEntries(
+  migrationData.providers.map((p) => [p.provider_id, p])
+);
+---
+
+<BaseLayout
+  title="Verhuiskosten Calculator — Wat kost overstappen van hosting?"
+  description="Bereken wat het kost om van hosting provider te wisselen. Opzegkosten, domein transfer, geschatte downtime — alles in één overzicht."
+>
+  <section class="calc-hero">
+    <div class="container">
+      <h1>Verhuiskosten Calculator</h1>
+      <p class="hero-sub">Bereken wat overstappen naar een andere hosting provider je kost aan tijd, geld en downtime.</p>
+    </div>
+  </section>
+
+  <section class="calc-section">
+    <div class="container calc-layout">
+      <!-- Form -->
+      <div class="calc-form">
+        <h2>Jouw situatie</h2>
+
+        <div class="form-group">
+          <label for="fromProvider">Ik zit nu bij:</label>
+          <select id="fromProvider">
+            <option value="">— Selecteer huidige provider —</option>
+            {providers.map((p) => (
+              <option value={p.id}>{p.naam}</option>
+            ))}
+            <option value="other">Anders / weet ik niet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="toProvider">Ik wil naar:</label>
+          <select id="toProvider">
+            <option value="">— Selecteer nieuwe provider —</option>
+            {providers.map((p) => (
+              <option value={p.id}>{p.naam}</option>
+            ))}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="transferDomain">Wil je ook je domeinnaam overzetten?</label>
+          <select id="transferDomain">
+            <option value="yes">Ja, inclusief domeinnaam</option>
+            <option value="no">Nee, domeinnaam blijft waar hij is</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contractMonths">Resterende contractmaanden:</label>
+          <input type="number" id="contractMonths" min="0" max="24" value="0" placeholder="0" />
+        </div>
+
+        <button class="btn-calc" id="calcBtn">Bereken verhuiskosten →</button>
+      </div>
+
+      <!-- Results -->
+      <div class="calc-results" id="calcResults" style="display:none">
+        <h2>Jouw verhuisoverzicht</h2>
+
+        <div class="cost-summary" id="costSummary"></div>
+
+        <div class="cost-breakdown" id="costBreakdown"></div>
+
+        <div class="migration-tips" id="migrationTips"></div>
+
+        <div class="provider-cta" id="providerCta"></div>
+      </div>
+
+      <div class="calc-placeholder" id="calcPlaceholder">
+        <div class="placeholder-inner">
+          <span class="placeholder-icon">🧮</span>
+          <p>Selecteer je huidige en nieuwe provider om de verhuiskosten te berekenen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-section">
+    <div class="container">
+      <h2>Wat zijn typische verhuiskosten?</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>💰 Opzegkosten</h3>
+          <p>De meeste providers rekenen geen opzegkosten, maar sommige hanteren een opzegtermijn van 30 dagen. Controleer je contract.</p>
+        </div>
+        <div class="info-card">
+          <h3>🌐 Domein transfer</h3>
+          <p>Een domeinnaam overzetten kost €0–€15 afhankelijk van de extensie (.nl, .com). De transfer duurt 5–7 werkdagen.</p>
+        </div>
+        <div class="info-card">
+          <h3>⏱ Downtime</h3>
+          <p>Goede providers bieden gratis migratie met minimale downtime (30–60 min). Plan buiten kantooruren.</p>
+        </div>
+        <div class="info-card">
+          <h3>📧 E-mail migratie</h3>
+          <p>Vergeet niet je e-mailaccounts en berichten mee te verhuizen. Dit kost extra tijd maar is geen harde kost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ migrationMap, providers }}>
+  const providerMap = Object.fromEntries(providers.map((p) => [p.id, p]));
+
+  document.getElementById('calcBtn').addEventListener('click', calculate);
+
+  function calculate() {
+    const fromId = document.getElementById('fromProvider').value;
+    const toId = document.getElementById('toProvider').value;
+    const transferDomain = document.getElementById('transferDomain').value === 'yes';
+    const contractMonths = parseInt(document.getElementById('contractMonths').value) || 0;
+
+    if (!toId) { alert('Selecteer een nieuwe provider.'); return; }
+
+    const fromMig = fromId && fromId !== 'other' ? migrationMap[fromId] : null;
+    const toMig = migrationMap[toId];
+    const toProvider = providerMap[toId];
+
+    let totalCost = 0;
+    const items = [];
+
+    // Opzegkosten from old provider
+    if (fromMig) {
+      const opzeg = fromMig.opzegkosten.bedrag_eur;
+      if (opzeg > 0) {
+        items.push({ label: `Opzegkosten ${fromMig.naam}`, amount: opzeg, type: 'cost', note: fromMig.opzegkosten.opmerkingen });
+        totalCost += opzeg;
+      } else {
+        items.push({ label: `Opzegkosten ${fromMig.naam}`, amount: 0, type: 'free', note: fromMig.opzegkosten.opmerkingen });
+      }
+    }
+
+    // Contract remainder
+    if (contractMonths > 0 && fromId !== 'other') {
+      const note = 'Resterende contractperiode — check je overeenkomst of je het abonnement kunt opzeggen.';
+      items.push({ label: `Resterende ${contractMonths} contractmaand(en)`, amount: null, type: 'variable', note });
+    }
+
+    // Domain transfer costs
+    if (transferDomain) {
+      const domainCost = fromMig ? fromMig.domein_transfer.kosten_eur : 0;
+      if (domainCost > 0) {
+        items.push({ label: 'Domein transfer kosten', amount: domainCost, type: 'cost', note: fromMig.domein_transfer.opmerkingen });
+        totalCost += domainCost;
+      } else {
+        items.push({ label: 'Domein transfer', amount: 0, type: 'free', note: fromMig ? fromMig.domein_transfer.opmerkingen : 'Gratis bij de meeste providers.' });
+      }
+    }
+
+    // Downtime estimate at new provider
+    if (toMig) {
+      const downtime = toMig.migratie.geschatte_downtime_uren;
+      const freeMsg = toMig.migratie.gratis_migratie ? `Gratis migratie inbegrepen (${toMig.migratie.migratie_tool}).` : 'Geen gratis migratie — je verhuist zelf of betaalt extra.';
+      items.push({ label: `Geschatte downtime bij ${toMig.naam}`, amount: null, type: 'time', note: `${downtime}u — ${freeMsg}` });
+    }
+
+    // Cheapest plan at new provider
+    const cheapestPlan = toProvider ? [...toProvider.plannen].sort((a, b) => a.prijs_per_maand - b.prijs_per_maand)[0] : null;
+
+    // Render
+    const summaryEl = document.getElementById('costSummary');
+    summaryEl.innerHTML = `
+      <div class="summary-total">
+        <span class="total-label">Totale eenmalige kosten</span>
+        <span class="total-amount">€${totalCost.toFixed(2)}</span>
+      </div>
+      <p class="total-note">Exclusief eventuele resterende contractmaanden en persoonlijk tijdsbeslag.</p>
+    `;
+
+    const breakdownEl = document.getElementById('costBreakdown');
+    breakdownEl.innerHTML = `
+      <h3>Kostenspecificatie</h3>
+      <ul class="breakdown-list">
+        ${items.map((item) => `
+          <li class="breakdown-item breakdown-${item.type}">
+            <div class="breakdown-main">
+              <span class="breakdown-label">${item.label}</span>
+              <span class="breakdown-value">
+                ${item.amount !== null
+                  ? (item.amount === 0 ? '<span class="cost-free">Gratis</span>' : `<span class="cost-amount">€${item.amount.toFixed(2)}</span>`)
+                  : '<span class="cost-var">Variabel</span>'
+                }
+              </span>
+            </div>
+            ${item.note ? `<p class="breakdown-note">${item.note}</p>` : ''}
+          </li>
+        `).join('')}
+      </ul>
+    `;
+
+    const tipsEl = document.getElementById('migrationTips');
+    const tips = [];
+    if (fromMig && fromMig.migratie && fromMig.migratie.tips_voor_vertrek) {
+      tips.push(...fromMig.migratie.tips_voor_vertrek.slice(0, 2));
+    }
+    if (toMig && toMig.migratie && toMig.migratie.stappen) {
+      tips.push(...toMig.migratie.stappen.slice(0, 2));
+    }
+    if (tips.length) {
+      tipsEl.innerHTML = `
+        <h3>Migratie tips</h3>
+        <ul class="tips-list">${tips.map((t) => `<li>✓ ${t}</li>`).join('')}</ul>
+      `;
+    } else {
+      tipsEl.innerHTML = `
+        <h3>Migratie tips</h3>
+        <ul class="tips-list">
+          <li>✓ Maak een volledige backup vóór de migratie</li>
+          <li>✓ Verlaag TTL van DNS records 24u van tevoren</li>
+          <li>✓ Test de site op het nieuwe platform vóór DNS omzetten</li>
+          <li>✓ Zet migratie in de avond of het weekend</li>
+        </ul>
+      `;
+    }
+
+    const ctaEl = document.getElementById('providerCta');
+    if (toProvider && cheapestPlan) {
+      ctaEl.innerHTML = `
+        <div class="provider-cta-box">
+          <div>
+            <strong>Klaar om over te stappen naar ${toProvider.naam}?</strong>
+            <p>Vanaf €${cheapestPlan.prijs_per_maand.toFixed(2)}/maand — Score: ${toProvider.beoordeling.overall}/10</p>
+          </div>
+          <a href="${toProvider.affiliate_url}" target="_blank" rel="noopener sponsored" class="btn-cta">
+            Stap nu over →
+          </a>
+        </div>
+      `;
+    }
+
+    document.getElementById('calcPlaceholder').style.display = 'none';
+    document.getElementById('calcResults').style.display = '';
+    document.getElementById('calcResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+
+<style>
+  .calc-hero {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    color: white; padding: 2.5rem 0 2rem; text-align: center;
+  }
+  .calc-hero h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+  .hero-sub { font-size: 1rem; opacity: 0.9; margin: 0; }
+
+  .calc-section { padding: 2.5rem 0; }
+  .calc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+
+  .calc-form {
+    background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .calc-form h2 { margin: 0 0 1.5rem; font-size: 1.3rem; }
+
+  .form-group { margin-bottom: 1.25rem; }
+  .form-group label { display: block; font-weight: 600; font-size: 0.9rem; color: #374151; margin-bottom: 0.4rem; }
+  .form-group select,
+  .form-group input {
+    width: 100%; padding: 0.65rem 0.85rem; border: 1.5px solid #d1d5db;
+    border-radius: 8px; font-size: 0.95rem; background: white;
+    transition: border-color 0.15s;
+  }
+  .form-group select:focus,
+  .form-group input:focus { outline: none; border-color: #2563eb; }
+
+  .btn-calc {
+    width: 100%; background: #2563eb; color: white; border: none;
+    padding: 0.85rem; border-radius: 8px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: background 0.15s; margin-top: 0.5rem;
+  }
+  .btn-calc:hover { background: #1d4ed8; }
+
+  .calc-results { background: white; border: 1px solid #e5e7eb; border-radius: 14px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .calc-results h2 { margin: 0 0 1.5rem; font-size: 1.3rem; }
+
+  .calc-placeholder {
+    background: #f9fafb; border: 2px dashed #d1d5db; border-radius: 14px;
+    padding: 3rem 2rem; display: flex; align-items: center; justify-content: center;
+  }
+  .placeholder-inner { text-align: center; color: #6b7280; }
+  .placeholder-icon { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+
+  .cost-summary { background: #eff6ff; border-radius: 10px; padding: 1.25rem; margin-bottom: 1.5rem; }
+  .summary-total { display: flex; justify-content: space-between; align-items: center; }
+  .total-label { font-weight: 600; font-size: 1rem; }
+  .total-amount { font-size: 1.8rem; font-weight: 900; color: #2563eb; }
+  .total-note { font-size: 0.78rem; color: #6b7280; margin: 0.5rem 0 0; }
+
+  .cost-breakdown h3, .migration-tips h3 { font-size: 1rem; margin: 0 0 0.75rem; }
+
+  .breakdown-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+  .breakdown-item { padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6; }
+  .breakdown-item:last-child { border-bottom: none; }
+  .breakdown-main { display: flex; justify-content: space-between; align-items: center; }
+  .breakdown-label { font-size: 0.9rem; font-weight: 600; color: #374151; }
+  .breakdown-note { font-size: 0.78rem; color: #6b7280; margin: 4px 0 0; }
+
+  .cost-free { color: #15803d; font-weight: 700; font-size: 0.9rem; }
+  .cost-amount { color: #dc2626; font-weight: 700; font-size: 0.9rem; }
+  .cost-var { color: #d97706; font-weight: 700; font-size: 0.9rem; }
+
+  .tips-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+  .tips-list li { font-size: 0.88rem; color: #374151; padding: 4px 0; }
+
+  .provider-cta-box {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    background: #f0fdf4; border: 1px solid #86efac; border-radius: 10px; padding: 1rem 1.25rem;
+  }
+  .provider-cta-box strong { font-size: 0.95rem; }
+  .provider-cta-box p { margin: 4px 0 0; font-size: 0.82rem; color: #6b7280; }
+  .btn-cta {
+    white-space: nowrap; background: #16a34a; color: white;
+    padding: 0.6rem 1.25rem; border-radius: 8px; text-decoration: none;
+    font-weight: 700; font-size: 0.9rem;
+  }
+  .btn-cta:hover { background: #15803d; }
+
+  .info-section { background: #f9fafb; padding: 3rem 0; }
+  .info-section h2 { text-align: center; margin: 0 0 2rem; }
+  .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  .info-card { background: white; border-radius: 12px; padding: 1.25rem; border: 1px solid #e5e7eb; }
+  .info-card h3 { font-size: 1rem; margin: 0 0 0.5rem; }
+  .info-card p { font-size: 0.85rem; color: #6b7280; margin: 0; line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .calc-layout { grid-template-columns: 1fr; }
+    .info-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .provider-cta-box { flex-direction: column; }
+  }
+</style>

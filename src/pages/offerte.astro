@@ -44,14 +44,46 @@ const benefits = [
   <section class="offerte-hero">
     <div class="container hero-content">
       <span class="hero-badge">Onafhankelijk & Eerlijk</span>
-      <h1>Vergelijk hosting<br />providers</h1>
+      <h1>Vind de hosting<br />die bij jou past</h1>
       <p class="hero-sub">
-        Vind de beste hosting voor jouw website. Vergelijk Nederlandse providers op prijs, snelheid en betrouwbaarheid.
+        Gebruik onze gratis keuzehulp voor een persoonlijke aanbeveling, of vergelijk alle providers direct.
       </p>
-      <div class="hero-cta">
-        <AffiliateButton linkId="hosting-vergelijk" label="Bekijk hosting pakketten" variant="cta" />
+      <div class="hero-cta-row">
+        <a href="/tools/welke-hosting/" class="btn-wizard">🧭 Start keuzehulp (2 min)</a>
+        <a href="/tools/vergelijk/" class="btn-compare">Alle providers vergelijken →</a>
       </div>
       <p class="hero-note">Onafhankelijke vergelijkingen voor de Nederlandse markt</p>
+    </div>
+  </section>
+
+  <section class="tools-embed-section">
+    <div class="container">
+      <div class="tools-row">
+        <a href="/tools/welke-hosting/" class="embed-tool-card highlight">
+          <span class="etcard-icon">🧭</span>
+          <div class="etcard-body">
+            <h3>Welke hosting heb ik nodig?</h3>
+            <p>Beantwoord 4 vragen. Krijg jouw persoonlijke Top 3 aanbeveling met affiliate links.</p>
+            <span class="etcard-link">Start de keuzehulp →</span>
+          </div>
+        </a>
+        <a href="/tools/vergelijk/" class="embed-tool-card">
+          <span class="etcard-icon">📊</span>
+          <div class="etcard-body">
+            <h3>Providers vergelijken</h3>
+            <p>Sorteer op prijs, opslag of score. Toggle maand vs. jaarprijs. Filter op hosting type.</p>
+            <span class="etcard-link">Open vergelijker →</span>
+          </div>
+        </a>
+        <a href="/tools/verhuiskosten/" class="embed-tool-card">
+          <span class="etcard-icon">🚚</span>
+          <div class="etcard-body">
+            <h3>Verhuiskosten Calculator</h3>
+            <p>Bereken opzegkosten, domein transfer en verwachte downtime voor jouw overstap.</p>
+            <span class="etcard-link">Bereken kosten →</span>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -105,6 +137,38 @@ const benefits = [
 </BaseLayout>
 
 <style>
+  .hero-cta-row { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem; }
+  .btn-wizard {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; color: #1d4ed8; padding: 0.8rem 1.75rem;
+    border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none;
+    transition: all 0.15s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .btn-wizard:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+  .btn-compare {
+    display: inline-flex; align-items: center;
+    background: rgba(255,255,255,0.15); color: white; padding: 0.8rem 1.75rem;
+    border-radius: 8px; font-weight: 600; font-size: 1rem; text-decoration: none;
+    border: 1.5px solid rgba(255,255,255,0.4); transition: all 0.15s;
+  }
+  .btn-compare:hover { background: rgba(255,255,255,0.25); }
+
+  .tools-embed-section { padding: 2.5rem 0; background: #f9fafb; }
+  .tools-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .embed-tool-card {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: white; border: 2px solid #e5e7eb; border-radius: 14px;
+    padding: 1.5rem; text-decoration: none; color: inherit;
+    transition: all 0.15s;
+  }
+  .embed-tool-card:hover { border-color: #2563eb; box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
+  .embed-tool-card.highlight { border-color: #2563eb; background: #eff6ff; }
+  .etcard-icon { font-size: 2rem; flex-shrink: 0; }
+  .etcard-body h3 { margin: 0 0 0.4rem; font-size: 1rem; color: #111827; }
+  .etcard-body p { margin: 0 0 0.75rem; font-size: 0.83rem; color: #6b7280; line-height: 1.5; }
+  .etcard-link { font-size: 0.85rem; font-weight: 700; color: #2563eb; }
+  @media (max-width: 768px) { .tools-row { grid-template-columns: 1fr; } }
+
   .offerte-hero {
     background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 40%, #2563eb 70%, #3b82f6 100%);
     color: #fff;

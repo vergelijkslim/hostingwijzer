@@ -1,0 +1,524 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import providersData from '../../../data/hosting-providers.json';
+
+const providers = providersData.providers;
+---
+
+<BaseLayout
+  title="Welke hosting heb ik nodig? — Slimme Keuzehulp"
+  description="Beantwoord 4 vragen en ontdek welke hosting provider het beste past bij jouw website, bezoekersaantal en budget."
+>
+  <section class="wizard-hero">
+    <div class="container">
+      <h1>Welke hosting heb jij nodig?</h1>
+      <p class="hero-sub">Beantwoord 4 vragen — wij geven je persoonlijke Top 3 aanbeveling.</p>
+    </div>
+  </section>
+
+  <section class="wizard-section">
+    <div class="container">
+      <div class="wizard-wrapper">
+        <!-- Progress -->
+        <div class="wizard-progress">
+          <div class="progress-steps">
+            <div class="step active" data-step="1"><span>1</span><label>Soort site</label></div>
+            <div class="step" data-step="2"><span>2</span><label>Bezoekers</label></div>
+            <div class="step" data-step="3"><span>3</span><label>Features</label></div>
+            <div class="step" data-step="4"><span>4</span><label>Budget</label></div>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+
+        <!-- Step 1: Site type -->
+        <div class="wizard-step active" id="step-1">
+          <h2>Wat voor website wil je bouwen?</h2>
+          <div class="option-grid">
+            <button class="option-card" data-value="blog">
+              <span class="option-icon">✍️</span>
+              <strong>Blog</strong>
+              <span>Artikelen, nieuws of persoonlijke content</span>
+            </button>
+            <button class="option-card" data-value="webshop">
+              <span class="option-icon">🛒</span>
+              <strong>Webshop</strong>
+              <span>Producten verkopen online</span>
+            </button>
+            <button class="option-card" data-value="portfolio">
+              <span class="option-icon">🎨</span>
+              <strong>Portfolio</strong>
+              <span>Werk tonen als freelancer of bedrijf</span>
+            </button>
+            <button class="option-card" data-value="bedrijf">
+              <span class="option-icon">🏢</span>
+              <strong>Bedrijfswebsite</strong>
+              <span>Zakelijk, dienstverlening, lead-gen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Visitors -->
+        <div class="wizard-step" id="step-2">
+          <h2>Hoeveel bezoekers verwacht je per maand?</h2>
+          <div class="slider-section">
+            <div class="slider-value-display">
+              <span id="visitorValue">1.000</span>
+              <span class="slider-label">bezoekers/maand</span>
+            </div>
+            <input type="range" id="visitorSlider" min="0" max="6" value="2" class="range-slider" />
+            <div class="slider-labels">
+              <span>100</span>
+              <span>500</span>
+              <span>1K</span>
+              <span>5K</span>
+              <span>10K</span>
+              <span>50K</span>
+              <span>100K+</span>
+            </div>
+          </div>
+          <div class="visitor-hint" id="visitorHint">
+            <span>💡</span> <span id="visitorHintText">Gemiddelde blog of kleine site</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Features -->
+        <div class="wizard-step" id="step-3">
+          <h2>Welke features heb je nodig?</h2>
+          <div class="feature-grid">
+            <label class="feature-card">
+              <input type="checkbox" value="wordpress" /> WordPress
+              <span>CMS voor eenvoudig beheer</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="email" checked /> Email
+              <span>Zakelijk e-mailadres</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="ssl" checked /> SSL certificaat
+              <span>HTTPS beveiliging</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="ssh" /> SSH toegang
+              <span>Technisch/developer gebruik</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="staging" /> Stagingomgeving
+              <span>Test veilig vóór live gaan</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="cdn" /> CDN
+              <span>Snellere laadtijden wereldwijd</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="backup" checked /> Dagelijkse backup
+              <span>Automatisch herstel</span>
+            </label>
+            <label class="feature-card">
+              <input type="checkbox" value="multisites" /> Meerdere sites
+              <span>Meerdere websites op 1 plan</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 4: Budget -->
+        <div class="wizard-step" id="step-4">
+          <h2>Wat is je budget per maand?</h2>
+          <div class="slider-section">
+            <div class="slider-value-display">
+              <span>max. </span><span id="budgetValue">€5</span>
+              <span class="slider-label">per maand</span>
+            </div>
+            <input type="range" id="budgetSlider" min="1" max="30" value="5" class="range-slider" />
+            <div class="slider-labels">
+              <span>€1</span>
+              <span>€5</span>
+              <span>€10</span>
+              <span>€20</span>
+              <span>€30+</span>
+            </div>
+          </div>
+          <button class="btn-primary btn-large" id="showResults">Toon mijn aanbeveling →</button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="wizard-nav" id="wizardNav">
+          <button class="btn-secondary" id="prevBtn" style="display:none">← Vorige</button>
+          <button class="btn-primary" id="nextBtn">Volgende →</button>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="results-section" id="resultsSection" style="display:none">
+        <h2>Jouw persoonlijke Top 3</h2>
+        <p class="results-sub" id="resultsSub"></p>
+        <div class="results-grid" id="resultsGrid"></div>
+        <div class="results-cta">
+          <p>Wil je meer vergelijken?</p>
+          <a href="/tools/vergelijk/" class="btn-secondary">Bekijk alle providers →</a>
+        </div>
+        <button class="btn-text" id="restartBtn">↩ Opnieuw beginnen</button>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ providers }}>
+  const steps = ['step-1', 'step-2', 'step-3', 'step-4'];
+  let currentStep = 0;
+  const answers = { type: null, visitors: 1000, features: ['email', 'ssl', 'backup'], budget: 5 };
+
+  const visitorValues = [100, 500, 1000, 5000, 10000, 50000, 100000];
+  const visitorHints = [
+    'Heel kleine site of testproject',
+    'Kleine blog of portfolio',
+    'Gemiddelde blog of kleine site',
+    'Groeiende site met community',
+    'Drukke blog of kleine webshop',
+    'Professionele webshop of platform',
+    'Hoog-traffic platform',
+  ];
+
+  function updateProgress() {
+    const pct = ((currentStep + 1) / steps.length) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.querySelectorAll('.progress-steps .step').forEach((el, i) => {
+      el.classList.toggle('active', i <= currentStep);
+      el.classList.toggle('done', i < currentStep);
+    });
+  }
+
+  function showStep(idx) {
+    document.querySelectorAll('.wizard-step').forEach((el) => el.classList.remove('active'));
+    document.getElementById(steps[idx]).classList.add('active');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    prevBtn.style.display = idx > 0 ? '' : 'none';
+    nextBtn.style.display = idx < steps.length - 1 ? '' : 'none';
+    document.getElementById('showResults').style.display = idx === steps.length - 1 ? '' : 'none';
+    updateProgress();
+  }
+
+  // Step 1: option cards
+  document.querySelectorAll('.option-card').forEach((card) => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.option-card').forEach((c) => c.classList.remove('selected'));
+      card.classList.add('selected');
+      answers.type = card.dataset.value;
+      setTimeout(() => { currentStep = 1; showStep(currentStep); }, 300);
+    });
+  });
+
+  // Step 2: visitor slider
+  const visitorSlider = document.getElementById('visitorSlider');
+  visitorSlider.addEventListener('input', () => {
+    const idx = parseInt(visitorSlider.value);
+    answers.visitors = visitorValues[idx];
+    document.getElementById('visitorValue').textContent = visitorValues[idx].toLocaleString('nl-NL');
+    document.getElementById('visitorHintText').textContent = visitorHints[idx];
+  });
+
+  // Step 3: features
+  document.querySelectorAll('.feature-card input').forEach((cb) => {
+    cb.addEventListener('change', () => {
+      answers.features = Array.from(document.querySelectorAll('.feature-card input:checked')).map((el) => el.value);
+    });
+  });
+
+  // Step 4: budget slider
+  const budgetSlider = document.getElementById('budgetSlider');
+  budgetSlider.addEventListener('input', () => {
+    answers.budget = parseInt(budgetSlider.value);
+    document.getElementById('budgetValue').textContent = '€' + budgetSlider.value;
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentStep < steps.length - 1) { currentStep++; showStep(currentStep); }
+  });
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentStep > 0) { currentStep--; showStep(currentStep); }
+  });
+  document.getElementById('showResults').addEventListener('click', showResults);
+  document.getElementById('restartBtn').addEventListener('click', () => {
+    currentStep = 0;
+    document.getElementById('resultsSection').style.display = 'none';
+    document.querySelector('.wizard-wrapper').style.display = '';
+    answers.type = null;
+    document.querySelectorAll('.option-card').forEach((c) => c.classList.remove('selected'));
+    showStep(0);
+  });
+
+  function scoreProvider(provider) {
+    let score = provider.beoordeling.overall * 10;
+    let bestPlan = null;
+    let bestPlanScore = -1;
+
+    for (const plan of provider.plannen) {
+      if (plan.prijs_per_maand > answers.budget) continue;
+      let ps = 0;
+
+      // Feature matching
+      const f = plan.features;
+      if (answers.features.includes('wordpress') && f.wordpress) ps += 15;
+      if (answers.features.includes('email') && f.email) ps += 10;
+      if (answers.features.includes('ssl') && f.ssl) ps += 10;
+      if (answers.features.includes('ssh') && f.ssh) ps += 12;
+      if (answers.features.includes('staging') && f.staging) ps += 12;
+      if (answers.features.includes('cdn') && f.cdn) ps += 8;
+      if (answers.features.includes('backup') && f.backup_dagelijks) ps += 8;
+      if (answers.features.includes('multisites') && (f.sites === 'onbeperkt' || (typeof f.sites === 'number' && f.sites > 1))) ps += 12;
+
+      // Visitor capacity
+      if (answers.visitors > 10000 && plan.type === 'cloud') ps += 20;
+      else if (answers.visitors > 5000 && plan.opslag_gb >= 50) ps += 10;
+
+      // Price value
+      ps += Math.max(0, 15 - plan.prijs_per_maand * 2);
+
+      if (ps > bestPlanScore) { bestPlanScore = ps; bestPlan = plan; }
+    }
+
+    if (!bestPlan) return null;
+
+    // Type bonuses
+    if (answers.type === 'webshop' && provider.badges.includes('beste-wordpress')) score += 10;
+    if (answers.type === 'blog' && provider.badges.includes('meest-populair-nl')) score += 8;
+    if (answers.type === 'bedrijf' && provider.badges.includes('beste-support')) score += 10;
+    if (answers.type === 'portfolio' && provider.badges.includes('beste-koop')) score += 8;
+    if (provider.badges.includes('beste-performance') && answers.visitors > 5000) score += 15;
+    if (provider.badges.includes('beste-uptime')) score += 8;
+
+    score += bestPlanScore;
+
+    return { provider, plan: bestPlan, score };
+  }
+
+  function badgeLabel(badge) {
+    const map = {
+      'beste-wordpress': '⭐ Beste WordPress',
+      'beste-support': '🎧 Beste support',
+      'beste-koop': '💰 Beste koop',
+      'meest-populair-nl': '🇳🇱 Meest populair NL',
+      'beste-vps': '🚀 Beste VPS',
+      'beste-performance': '⚡ Beste performance',
+      'beste-uptime': '✅ Beste uptime',
+    };
+    return map[badge] || badge;
+  }
+
+  function reasonText(result) {
+    const reasons = [];
+    const f = result.plan.features;
+    if (answers.features.includes('wordpress') && f.wordpress) reasons.push('WordPress klaar');
+    if (answers.features.includes('ssh') && f.ssh) reasons.push('SSH toegang');
+    if (answers.features.includes('staging') && f.staging) reasons.push('stagingomgeving');
+    if (answers.features.includes('cdn') && f.cdn) reasons.push('CDN inbegrepen');
+    if (result.plan.type === 'cloud' && answers.visitors > 10000) reasons.push('schaalt mee met traffic');
+    if (result.provider.badges.includes('beste-support') && answers.type === 'bedrijf') reasons.push('uitstekende support');
+    if (result.provider.badges.includes('beste-uptime')) reasons.push('hoogste uptime');
+    return reasons.length ? 'Past bij jou vanwege: ' + reasons.slice(0, 3).join(', ') + '.' : 'Goede balans van prijs en kwaliteit.';
+  }
+
+  function showResults() {
+    const scored = providers.map(scoreProvider).filter(Boolean).sort((a, b) => b.score - a.score).slice(0, 3);
+
+    const typeLabel = { blog: 'blog', webshop: 'webshop', portfolio: 'portfolio', bedrijf: 'bedrijfswebsite' };
+    document.getElementById('resultsSub').textContent =
+      `Voor een ${typeLabel[answers.type] || 'website'} met ${answers.visitors.toLocaleString('nl-NL')} bezoekers/maand en een budget van €${answers.budget}/maand.`;
+
+    const grid = document.getElementById('resultsGrid');
+    grid.innerHTML = scored.map((r, i) => `
+      <div class="result-card ${i === 0 ? 'result-winner' : ''}">
+        ${i === 0 ? '<div class="winner-badge">🏆 Beste keuze voor jou</div>' : ''}
+        <div class="result-header">
+          <div class="result-rank">#${i + 1}</div>
+          <h3>${r.provider.naam}</h3>
+          <div class="result-score">${r.provider.beoordeling.overall.toFixed(1)}/10</div>
+        </div>
+        <div class="result-plan">
+          <span class="plan-name">${r.plan.naam}</span>
+          <span class="plan-price">€${r.plan.prijs_per_maand.toFixed(2)}/maand</span>
+          <span class="plan-storage">${r.plan.opslag_gb} GB opslag</span>
+        </div>
+        ${r.provider.badges.length ? `<div class="result-badges">${r.provider.badges.map(badgeLabel).join(' ')}</div>` : ''}
+        <p class="result-reason">${reasonText(r)}</p>
+        <div class="result-features">
+          ${r.plan.features.email ? '<span class="feat-tag">✓ Email</span>' : ''}
+          ${r.plan.features.ssl ? '<span class="feat-tag">✓ SSL</span>' : ''}
+          ${r.plan.features.wordpress ? '<span class="feat-tag">✓ WordPress</span>' : ''}
+          ${r.plan.features.ssh ? '<span class="feat-tag">✓ SSH</span>' : ''}
+          ${r.plan.features.cdn ? '<span class="feat-tag">✓ CDN</span>' : ''}
+          ${r.plan.features.backup_dagelijks ? '<span class="feat-tag">✓ Dagelijkse backup</span>' : ''}
+        </div>
+        <a href="${r.provider.affiliate_url}" target="_blank" rel="noopener sponsored" class="result-cta">
+          Ga naar ${r.provider.naam} →
+        </a>
+      </div>
+    `).join('');
+
+    document.querySelector('.wizard-wrapper').style.display = 'none';
+    document.getElementById('resultsSection').style.display = '';
+    window.scrollTo({ top: document.getElementById('resultsSection').offsetTop - 80, behavior: 'smooth' });
+  }
+
+  showStep(0);
+</script>
+
+<style>
+  .wizard-hero {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    color: white;
+    padding: 3rem 0 2rem;
+    text-align: center;
+  }
+  .wizard-hero h1 { font-size: 2.2rem; margin: 0 0 0.5rem; }
+  .hero-sub { font-size: 1.1rem; opacity: 0.9; margin: 0; }
+
+  .wizard-section { padding: 2.5rem 0 4rem; }
+
+  .wizard-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 2rem;
+  }
+
+  /* Progress */
+  .wizard-progress { margin-bottom: 2rem; }
+  .progress-steps { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+  .progress-steps .step { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .progress-steps .step span {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #e5e7eb; color: #6b7280; font-weight: 700; font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .progress-steps .step label { font-size: 0.72rem; color: #6b7280; }
+  .progress-steps .step.active span { background: #2563eb; color: white; }
+  .progress-steps .step.done span { background: #16a34a; color: white; }
+  .progress-bar { height: 4px; background: #e5e7eb; border-radius: 2px; }
+  .progress-fill { height: 100%; background: #2563eb; border-radius: 2px; transition: width 0.3s; width: 25%; }
+
+  /* Steps */
+  .wizard-step { display: none; }
+  .wizard-step.active { display: block; }
+  .wizard-step h2 { font-size: 1.4rem; margin: 0 0 1.5rem; }
+
+  /* Options */
+  .option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .option-card {
+    border: 2px solid #e5e7eb; border-radius: 12px; padding: 1.25rem;
+    text-align: left; cursor: pointer; background: white;
+    display: flex; flex-direction: column; gap: 4px;
+    transition: all 0.15s;
+  }
+  .option-card:hover { border-color: #93c5fd; background: #eff6ff; }
+  .option-card.selected { border-color: #2563eb; background: #eff6ff; }
+  .option-icon { font-size: 1.5rem; }
+  .option-card strong { font-size: 1rem; }
+  .option-card span { font-size: 0.82rem; color: #6b7280; }
+
+  /* Slider */
+  .slider-section { margin: 1rem 0 1.5rem; }
+  .slider-value-display { text-align: center; margin-bottom: 1rem; }
+  .slider-value-display span:first-child { font-size: 2rem; font-weight: 800; color: #2563eb; }
+  .slider-label { font-size: 0.9rem; color: #6b7280; margin-left: 6px; }
+  .range-slider {
+    width: 100%; -webkit-appearance: none; height: 6px;
+    background: #dbeafe; border-radius: 3px; outline: none;
+  }
+  .range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 22px; height: 22px;
+    border-radius: 50%; background: #2563eb; cursor: pointer;
+    box-shadow: 0 2px 6px rgba(37,99,235,0.4);
+  }
+  .slider-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: #9ca3af; margin-top: 6px; }
+  .visitor-hint {
+    display: flex; align-items: center; gap: 6px;
+    background: #f0fdf4; border-radius: 8px; padding: 0.6rem 1rem;
+    font-size: 0.85rem; color: #15803d;
+  }
+
+  /* Features */
+  .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .feature-card {
+    display: flex; flex-direction: column; gap: 2px;
+    border: 2px solid #e5e7eb; border-radius: 10px; padding: 0.9rem;
+    cursor: pointer; font-weight: 600; font-size: 0.9rem;
+    transition: all 0.15s;
+  }
+  .feature-card:hover { border-color: #93c5fd; }
+  .feature-card input { display: none; }
+  .feature-card span { font-weight: 400; font-size: 0.78rem; color: #6b7280; }
+  .feature-card:has(input:checked) { border-color: #2563eb; background: #eff6ff; }
+
+  /* Navigation */
+  .wizard-nav { display: flex; justify-content: space-between; margin-top: 1.5rem; }
+
+  /* Buttons */
+  .btn-primary {
+    background: #2563eb; color: white; border: none;
+    padding: 0.75rem 1.75rem; border-radius: 8px;
+    font-size: 1rem; font-weight: 600; cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn-primary:hover { background: #1d4ed8; }
+  .btn-primary.btn-large { width: 100%; padding: 1rem; font-size: 1.1rem; margin-top: 1.5rem; }
+  .btn-secondary {
+    background: white; color: #374151; border: 2px solid #e5e7eb;
+    padding: 0.75rem 1.75rem; border-radius: 8px;
+    font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: border-color 0.15s;
+  }
+  .btn-secondary:hover { border-color: #2563eb; color: #2563eb; }
+  .btn-text { background: none; border: none; color: #6b7280; cursor: pointer; font-size: 0.9rem; display: block; margin: 1rem auto 0; }
+
+  /* Results */
+  .results-section { max-width: 960px; margin: 0 auto; }
+  .results-section h2 { font-size: 1.8rem; text-align: center; margin-bottom: 0.5rem; }
+  .results-sub { text-align: center; color: #6b7280; margin-bottom: 2rem; }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .result-card {
+    background: white; border: 2px solid #e5e7eb; border-radius: 14px;
+    padding: 1.5rem; position: relative; display: flex; flex-direction: column;
+  }
+  .result-winner { border-color: #2563eb; box-shadow: 0 4px 20px rgba(37,99,235,0.15); }
+  .winner-badge {
+    background: #2563eb; color: white; font-size: 0.78rem; font-weight: 700;
+    padding: 4px 10px; border-radius: 20px; text-align: center; margin-bottom: 0.75rem;
+  }
+  .result-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+  .result-rank { font-size: 1.5rem; font-weight: 900; color: #d1d5db; }
+  .result-winner .result-rank { color: #2563eb; }
+  .result-header h3 { margin: 0; flex: 1; font-size: 1.1rem; }
+  .result-score { font-weight: 700; font-size: 0.9rem; color: #2563eb; }
+  .result-plan { display: flex; flex-direction: column; gap: 2px; margin-bottom: 0.75rem; background: #f9fafb; border-radius: 8px; padding: 0.6rem; }
+  .plan-name { font-weight: 700; font-size: 0.9rem; }
+  .plan-price { font-size: 1.1rem; font-weight: 800; color: #2563eb; }
+  .plan-storage { font-size: 0.78rem; color: #6b7280; }
+  .result-badges { font-size: 0.72rem; margin-bottom: 0.5rem; }
+  .result-reason { font-size: 0.82rem; color: #374151; margin: 0.5rem 0; flex: 1; }
+  .result-features { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 1rem; }
+  .feat-tag { background: #f0fdf4; color: #15803d; font-size: 0.72rem; padding: 2px 8px; border-radius: 20px; }
+  .result-cta {
+    display: block; text-align: center;
+    background: #2563eb; color: white; text-decoration: none;
+    padding: 0.65rem; border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+    transition: background 0.15s;
+  }
+  .result-cta:hover { background: #1d4ed8; }
+  .results-cta { text-align: center; margin-top: 2rem; }
+  .results-cta p { color: #6b7280; margin-bottom: 0.75rem; }
+
+  @media (max-width: 768px) {
+    .option-grid { grid-template-columns: 1fr 1fr; }
+    .results-grid { grid-template-columns: 1fr; }
+    .feature-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .option-grid { grid-template-columns: 1fr; }
+    .wizard-wrapper { padding: 1.25rem; }
+  }
+</style>

@@ -1,0 +1,319 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import providersData from '../../../data/hosting-providers.json';
+
+const providers = providersData.providers;
+
+const badgeLabels: Record<string, string> = {
+  'beste-wordpress': 'Beste WordPress',
+  'beste-support': 'Beste support',
+  'beste-koop': 'Beste koop',
+  'meest-populair-nl': 'Populair in NL',
+  'beste-vps': 'Beste VPS',
+  'beste-performance': 'Beste performance',
+  'beste-uptime': 'Beste uptime',
+};
+
+// Flatten to one row per plan for the table
+const rows = providers.flatMap((p) =>
+  p.plannen.map((plan) => ({
+    provider_id: p.id,
+    naam: p.naam,
+    affiliate_url: p.affiliate_url,
+    badges: p.badges,
+    overall: p.beoordeling.overall,
+    uptime: p.beoordeling.uptime,
+    support: p.beoordeling.support,
+    plan_naam: plan.naam,
+    prijs_maand: plan.prijs_per_maand,
+    prijs_jaar: plan.prijs_per_jaar,
+    opslag_gb: plan.opslag_gb,
+    type: plan.type,
+    features: plan.features,
+  }))
+);
+---
+
+<BaseLayout
+  title="Vergelijk Alle Hosting Providers — Interactieve Tabel"
+  description="Vergelijk alle Nederlandse hosting providers naast elkaar. Sorteer op prijs, opslag of beoordeling. Toggle maand- vs jaarprijs. Filter op type."
+>
+  <section class="compare-hero">
+    <div class="container">
+      <h1>Vergelijk alle hosting providers</h1>
+      <p class="hero-sub">Sorteer, filter en toggle tussen maand- en jaarprijs. Bijgewerkt april 2026.</p>
+    </div>
+  </section>
+
+  <section class="compare-section">
+    <div class="container">
+      <!-- Controls -->
+      <div class="table-controls">
+        <div class="controls-left">
+          <div class="filter-group">
+            <label>Type:</label>
+            <select id="filterType">
+              <option value="">Alle types</option>
+              <option value="shared">Shared hosting</option>
+              <option value="cloud">Cloud / VPS</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Max prijs/maand:</label>
+            <select id="filterBudget">
+              <option value="">Geen limiet</option>
+              <option value="3">Tot €3</option>
+              <option value="5">Tot €5</option>
+              <option value="10">Tot €10</option>
+              <option value="20">Tot €20</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Min. opslag:</label>
+            <select id="filterStorage">
+              <option value="">Geen eis</option>
+              <option value="10">Minimaal 10 GB</option>
+              <option value="25">Minimaal 25 GB</option>
+              <option value="50">Minimaal 50 GB</option>
+              <option value="100">Minimaal 100 GB</option>
+            </select>
+          </div>
+        </div>
+        <div class="price-toggle">
+          <button class="toggle-btn active" id="toggleMaand">Maandprijs</button>
+          <button class="toggle-btn" id="toggleJaar">Jaarprijs</button>
+        </div>
+      </div>
+
+      <div class="results-count" id="resultsCount"></div>
+
+      <!-- Table -->
+      <div class="table-wrapper">
+        <table class="compare-table" id="compareTable">
+          <thead>
+            <tr>
+              <th class="sortable" data-col="naam">Provider <span class="sort-icon">↕</span></th>
+              <th class="sortable" data-col="plan_naam">Plan <span class="sort-icon">↕</span></th>
+              <th class="sortable active-sort" data-col="prijs">Prijs <span class="sort-icon">↓</span></th>
+              <th class="sortable" data-col="opslag_gb">Opslag <span class="sort-icon">↕</span></th>
+              <th>Type</th>
+              <th class="sortable" data-col="overall">Score <span class="sort-icon">↕</span></th>
+              <th>Badges</th>
+              <th>Actie</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+
+      <p class="affiliate-note">* Prijzen zijn indicatief. Via onze links ontvangen wij mogelijk een vergoeding. Dit heeft geen invloed op onze beoordelingen.</p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Weet je nog niet welk plan past?</h2>
+      <p>Gebruik onze slimme keuzehulp voor een persoonlijke aanbeveling.</p>
+      <a href="/tools/welke-hosting/" class="btn-primary">Start de keuzehulp →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script define:vars={{ rows, badgeLabels }}>
+  let showJaar = false;
+  let sortCol = 'prijs';
+  let sortAsc = true;
+  let filterType = '';
+  let filterBudget = '';
+  let filterStorage = '';
+
+  const badgeColors = {
+    'beste-wordpress': '#7c3aed',
+    'beste-support': '#0369a1',
+    'beste-koop': '#b45309',
+    'meest-populair-nl': '#15803d',
+    'beste-vps': '#9333ea',
+    'beste-performance': '#dc2626',
+    'beste-uptime': '#0891b2',
+  };
+
+  function getPrice(row) {
+    return showJaar ? row.prijs_jaar / 12 : row.prijs_maand;
+  }
+
+  function renderRows() {
+    let filtered = rows.filter((r) => {
+      if (filterType && r.type !== filterType) return false;
+      if (filterBudget && r.prijs_maand > parseFloat(filterBudget)) return false;
+      if (filterStorage && r.opslag_gb !== 'onbeperkt' && r.opslag_gb < parseInt(filterStorage)) return false;
+      return true;
+    });
+
+    filtered.sort((a, b) => {
+      let av, bv;
+      if (sortCol === 'prijs') { av = getPrice(a); bv = getPrice(b); }
+      else if (sortCol === 'naam') { av = a.naam.toLowerCase(); bv = b.naam.toLowerCase(); }
+      else if (sortCol === 'plan_naam') { av = a.plan_naam.toLowerCase(); bv = b.plan_naam.toLowerCase(); }
+      else if (sortCol === 'opslag_gb') { av = a.opslag_gb === 'onbeperkt' ? 9999 : a.opslag_gb; bv = b.opslag_gb === 'onbeperkt' ? 9999 : b.opslag_gb; }
+      else if (sortCol === 'overall') { av = a.overall; bv = b.overall; }
+      else { av = 0; bv = 0; }
+      if (av < bv) return sortAsc ? -1 : 1;
+      if (av > bv) return sortAsc ? 1 : -1;
+      return 0;
+    });
+
+    document.getElementById('resultsCount').textContent = `${filtered.length} plan${filtered.length !== 1 ? 'nen' : ''} gevonden`;
+
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = filtered.map((r) => {
+      const price = getPrice(r);
+      const priceDisplay = showJaar
+        ? `€${price.toFixed(2)}/mo <small>(jaarlijks €${r.prijs_jaar.toFixed(0)})</small>`
+        : `€${price.toFixed(2)}/mo`;
+      const badgesHtml = r.badges.map((b) =>
+        `<span class="badge-chip" style="background:${badgeColors[b] || '#6b7280'}20;color:${badgeColors[b] || '#6b7280'};border-color:${badgeColors[b] || '#6b7280'}40">${badgeLabels[b] || b}</span>`
+      ).join('');
+      const typeLabel = r.type === 'cloud' ? '<span class="type-cloud">Cloud</span>' : '<span class="type-shared">Shared</span>';
+      return `
+        <tr>
+          <td class="provider-cell"><strong>${r.naam}</strong></td>
+          <td>${r.plan_naam}</td>
+          <td class="price-cell">${priceDisplay}</td>
+          <td>${r.opslag_gb === 'onbeperkt' ? '∞' : r.opslag_gb + ' GB'}</td>
+          <td>${typeLabel}</td>
+          <td class="score-cell"><span class="score-badge">${r.overall.toFixed(1)}</span></td>
+          <td class="badges-cell">${badgesHtml}</td>
+          <td><a href="${r.affiliate_url}" target="_blank" rel="noopener sponsored" class="cta-link">Bekijk →</a></td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  // Sort
+  document.querySelectorAll('th.sortable').forEach((th) => {
+    th.addEventListener('click', () => {
+      const col = th.dataset.col;
+      if (sortCol === col) sortAsc = !sortAsc;
+      else { sortCol = col; sortAsc = true; }
+      document.querySelectorAll('th.sortable').forEach((t) => {
+        t.classList.remove('active-sort');
+        t.querySelector('.sort-icon').textContent = '↕';
+      });
+      th.classList.add('active-sort');
+      th.querySelector('.sort-icon').textContent = sortAsc ? '↓' : '↑';
+      renderRows();
+    });
+  });
+
+  // Filters
+  document.getElementById('filterType').addEventListener('change', (e) => { filterType = e.target.value; renderRows(); });
+  document.getElementById('filterBudget').addEventListener('change', (e) => { filterBudget = e.target.value; renderRows(); });
+  document.getElementById('filterStorage').addEventListener('change', (e) => { filterStorage = e.target.value; renderRows(); });
+
+  // Price toggle
+  document.getElementById('toggleMaand').addEventListener('click', () => {
+    showJaar = false;
+    document.getElementById('toggleMaand').classList.add('active');
+    document.getElementById('toggleJaar').classList.remove('active');
+    renderRows();
+  });
+  document.getElementById('toggleJaar').addEventListener('click', () => {
+    showJaar = true;
+    document.getElementById('toggleJaar').classList.add('active');
+    document.getElementById('toggleMaand').classList.remove('active');
+    renderRows();
+  });
+
+  renderRows();
+</script>
+
+<style>
+  .compare-hero {
+    background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+    color: white; padding: 2.5rem 0 2rem; text-align: center;
+  }
+  .compare-hero h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+  .hero-sub { font-size: 1rem; opacity: 0.9; margin: 0; }
+
+  .compare-section { padding: 2rem 0 3rem; }
+
+  .table-controls {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;
+    background: #f9fafb; border-radius: 10px; padding: 1rem 1.25rem;
+  }
+  .controls-left { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+  .filter-group label { font-size: 0.85rem; color: #374151; white-space: nowrap; font-weight: 600; }
+  .filter-group select {
+    padding: 0.4rem 0.6rem; border: 1.5px solid #d1d5db; border-radius: 6px;
+    font-size: 0.85rem; background: white;
+  }
+
+  .price-toggle { display: flex; border: 1.5px solid #d1d5db; border-radius: 8px; overflow: hidden; }
+  .toggle-btn {
+    padding: 0.4rem 1rem; border: none; background: white;
+    font-size: 0.85rem; cursor: pointer; font-weight: 600; color: #6b7280;
+  }
+  .toggle-btn.active { background: #2563eb; color: white; }
+
+  .results-count { font-size: 0.85rem; color: #6b7280; margin-bottom: 0.75rem; }
+
+  .table-wrapper { overflow-x: auto; border-radius: 10px; border: 1px solid #e5e7eb; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .compare-table thead { background: #f9fafb; }
+  .compare-table th {
+    padding: 0.75rem 1rem; text-align: left; font-size: 0.82rem;
+    font-weight: 700; color: #374151; white-space: nowrap; border-bottom: 1.5px solid #e5e7eb;
+  }
+  .compare-table th.sortable { cursor: pointer; user-select: none; }
+  .compare-table th.sortable:hover { color: #2563eb; }
+  .compare-table th.active-sort { color: #2563eb; }
+  .sort-icon { margin-left: 4px; }
+
+  .compare-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #f3f4f6; vertical-align: middle; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: #f9fafb; }
+
+  .provider-cell strong { color: #111827; }
+  .price-cell { font-weight: 700; color: #2563eb; }
+  .price-cell small { font-weight: 400; font-size: 0.78rem; color: #6b7280; }
+
+  .type-shared { background: #dbeafe; color: #1d4ed8; font-size: 0.75rem; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+  .type-cloud { background: #fae8ff; color: #7e22ce; font-size: 0.75rem; padding: 2px 8px; border-radius: 20px; font-weight: 600; }
+
+  .score-badge {
+    display: inline-block; background: #dcfce7; color: #15803d;
+    font-weight: 700; font-size: 0.85rem; padding: 2px 8px; border-radius: 20px;
+  }
+
+  .badges-cell { max-width: 200px; }
+  .badge-chip {
+    display: inline-block; font-size: 0.7rem; padding: 2px 8px;
+    border-radius: 20px; border: 1px solid; margin: 2px 2px 2px 0; font-weight: 600; white-space: nowrap;
+  }
+
+  .cta-link {
+    color: #2563eb; text-decoration: none; font-weight: 600; font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .cta-link:hover { text-decoration: underline; }
+
+  .affiliate-note { font-size: 0.78rem; color: #9ca3af; margin-top: 1rem; }
+
+  .cta-section { background: #eff6ff; padding: 3rem 0; }
+  .cta-inner { text-align: center; }
+  .cta-inner h2 { margin: 0 0 0.5rem; }
+  .cta-inner p { color: #6b7280; margin: 0 0 1.25rem; }
+  .btn-primary {
+    display: inline-block; background: #2563eb; color: white;
+    padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none;
+    font-weight: 700; font-size: 1rem;
+  }
+  .btn-primary:hover { background: #1d4ed8; }
+
+  @media (max-width: 768px) {
+    .table-controls { flex-direction: column; }
+    .controls-left { flex-direction: column; align-items: flex-start; }
+  }
+</style>
