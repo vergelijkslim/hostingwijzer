@@ -1,0 +1,334 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Zo vergelijken wij — HostingWijzer.nl"
+  description="Ontdek hoe HostingWijzer.nl hosting providers beoordeelt. Onze methodologie, criteria en werkwijze voor eerlijke, onafhankelijke vergelijkingen."
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Zo vergelijken wij</h1>
+      <p class="hero-sub">Transparantie is de basis van eerlijk advies. Hier lees je precies hoe wij hosting providers beoordelen en welke criteria we hanteren.</p>
+    </div>
+  </section>
+
+  <article class="methodology-content">
+    <div class="container">
+
+      <div class="toc-card">
+        <h3>Inhoud van deze pagina</h3>
+        <ol>
+          <li><a href="#onze-aanpak">Onze aanpak</a></li>
+          <li><a href="#criteria">Beoordelingscriteria</a></li>
+          <li><a href="#scores">Hoe wij scoren</a></li>
+          <li><a href="#affiliate">Affiliatebeleid</a></li>
+          <li><a href="#actueel">Hoe we content actueel houden</a></li>
+        </ol>
+      </div>
+
+      <section id="onze-aanpak">
+        <h2>Onze aanpak</h2>
+        <p>HostingWijzer.nl is een onafhankelijke vergelijkingssite voor webhosting, VPS en cloud hosting in Nederland. We verdienen geld via affiliate commissies wanneer bezoekers via onze links een hostingpakket afsluiten — maar dit heeft <strong>geen invloed op onze beoordeling of rangschikking</strong>.</p>
+        <p>We testen hosting providers actief door:</p>
+        <ul>
+          <li>Accounts aan te maken en standaard WordPress-sites te draaien</li>
+          <li>Uptime te monitoren via externe tools (minimaal 30 dagen)</li>
+          <li>Laadsnelheden te meten vanuit Nederland met GTmetrix en PageSpeed Insights</li>
+          <li>Support te contacteren via chat, e-mail en telefoon</li>
+          <li>Controlpanels en migratie-tools te evalueren</li>
+        </ul>
+      </section>
+
+      <section id="criteria">
+        <h2>Beoordelingscriteria</h2>
+        <p>We beoordelen elke hosting provider op 8 criteria, elk met een gewicht in de eindscore:</p>
+        <div class="criteria-grid">
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <h4>Uptime & betrouwbaarheid (25%)</h4>
+            </div>
+            <p>Gemeten over minimaal 30 dagen. We accepteren providers met minder dan 99,9% uptime alleen als ze een SLA bieden. Data afkomstig van Uptime Robot.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <h4>Laadsnelheid (20%)</h4>
+            </div>
+            <p>TTFB (Time to First Byte) en LCP gemeten vanuit Amsterdam met een identieke WordPress-site. We meten 's ochtends, middag en avond en nemen het gemiddelde.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <h4>Klantenservice (20%)</h4>
+            </div>
+            <p>We sturen 5 testvragen per kanaal (chat, e-mail, telefoon) en beoordelen reactietijd, correctheid en vriendelijkheid. We testen buiten kantooruren.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              <h4>Prijs-kwaliteit (15%)</h4>
+            </div>
+            <p>We vergelijken de vernieuwingsprijs (niet de introductieprijs) met de geboden opslagruimte, bandbreedte en functies.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              <h4>Gebruiksgemak control panel (10%)</h4>
+            </div>
+            <p>Beoordeling van cPanel, DirectAdmin, Plesk of eigen panel. Criteria: installatie-gemak, navigatie, features en documentatie.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h4>Beveiliging (5%)</h4>
+            </div>
+            <p>Aanwezigheid van gratis SSL, DDoS-bescherming, malware scanning en automatische backups.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <h4>Locatie datacenters (3%)</h4>
+            </div>
+            <p>Voorkeur voor datacenters in Nederland of Duitsland voor optimale prestaties voor Nederlandse bezoekers.</p>
+          </div>
+          <div class="criterion">
+            <div class="criterion-header">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+              <h4>Migratie-opties (2%)</h4>
+            </div>
+            <p>Gratis migratiehulp, eigen migratietool of gedetailleerde migratie-handleiding.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="scores">
+        <h2>Hoe wij scoren</h2>
+        <p>Elke provider krijgt een score van 1–10 per criterium. De gewogen eindscore bepaalt de rangschikking. We publiceren nooit een score zonder minimaal 30 dagen testperiode te hebben doorlopen.</p>
+        <div class="scores-table">
+          <div class="score-row">
+            <span class="score-badge score-excellent">9–10</span>
+            <span>Uitstekend — topprestaties op alle fronten, aanbevolen voor de meeste gebruikers</span>
+          </div>
+          <div class="score-row">
+            <span class="score-badge score-good">7–8</span>
+            <span>Goed — betrouwbaar met kleine tekortkomingen in specifieke categorieën</span>
+          </div>
+          <div class="score-row">
+            <span class="score-badge score-average">5–6</span>
+            <span>Gemiddeld — voldoende voor basisgebruik maar niet onze eerste aanbeveling</span>
+          </div>
+          <div class="score-row">
+            <span class="score-badge score-poor">1–4</span>
+            <span>Onvoldoende — we raden deze provider niet aan</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="affiliate">
+        <h2>Affiliatebeleid</h2>
+        <p>HostingWijzer.nl werkt samen met hosting providers via affiliate netwerken (Daisycon, TradeTracker). Wanneer je via een link op onze site een pakket afsluit, ontvangen we mogelijk een commissie.</p>
+        <div class="policy-rules">
+          <div class="policy-rule">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Commissies beïnvloeden scores of rangschikking <strong>niet</strong></span>
+          </div>
+          <div class="policy-rule">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Alle affiliate links zijn zichtbaar gemarkeerd of vermeld in de disclaimer</span>
+          </div>
+          <div class="policy-rule">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>We testen providers ongeacht of er een affiliate-overeenkomst bestaat</span>
+          </div>
+          <div class="policy-rule">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Negatieve ervaringen worden altijd gepubliceerd, ook bij partners</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="actueel">
+        <h2>Hoe we content actueel houden</h2>
+        <div class="update-schedule">
+          <div class="update-item">
+            <strong>Maandelijks</strong>
+            <span>Uptime- en snelheidsmetingen vernieuwd</span>
+          </div>
+          <div class="update-item">
+            <strong>Per kwartaal</strong>
+            <span>Prijscontrole bij alle providers</span>
+          </div>
+          <div class="update-item">
+            <strong>Per halfjaar</strong>
+            <span>Volledige hertest van support en functionaliteit</span>
+          </div>
+          <div class="update-item">
+            <strong>Continu</strong>
+            <span>Nieuws over providers, storingen en aanbiedingen</span>
+          </div>
+        </div>
+        <p>Elke pagina toont de datum van de laatste controle. Als je een fout of verouderde informatie ziet, <a href="/contact/">neem dan contact op</a> — we zijn je erkentelijk.</p>
+      </section>
+
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0c1445 0%, #1e3a8a 100%);
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+  }
+  .page-hero h1 { color: #fff; margin-bottom: 1rem; }
+  .hero-sub {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.85;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  .methodology-content {
+    padding: 4rem 0;
+  }
+  .methodology-content .container {
+    max-width: var(--content-width);
+  }
+
+  .toc-card {
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .toc-card h3 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+  .toc-card ol {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+  .toc-card a { color: var(--color-primary); font-size: 0.9375rem; }
+
+  section {
+    margin-bottom: 3.5rem;
+  }
+  section h2 {
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-primary-light);
+  }
+  section p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  section ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+
+  .criteria-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  @media (min-width: 640px) { .criteria-grid { grid-template-columns: repeat(2, 1fr); } }
+  .criterion {
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: #fff;
+  }
+  .criterion-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+  }
+  .criterion-header svg { color: var(--color-primary); flex-shrink: 0; }
+  .criterion-header h4 {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .criterion p { font-size: 0.875rem; margin: 0; }
+
+  .scores-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+  }
+  .score-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .score-excellent { background: #dcfce7; color: #166534; }
+  .score-good { background: #dbeafe; color: #1e40af; }
+  .score-average { background: #fef9c3; color: #854d0e; }
+  .score-poor { background: #fee2e2; color: #991b1b; }
+
+  .policy-rules {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+  .policy-rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+  .policy-rule svg { flex-shrink: 0; margin-top: 2px; }
+
+  .update-schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+  }
+  .update-item {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9375rem;
+  }
+  .update-item strong { min-width: 110px; color: var(--color-primary-dark); }
+  .update-item span { color: var(--color-text-light); }
+</style>
