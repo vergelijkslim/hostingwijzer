@@ -81,7 +81,7 @@ Voor de meeste websites is VPS hosting voldoende. Kies cloud hosting als je éch
 
 ---
 
-*Vergelijk-uw-hosting.nl is onafhankelijk. We kunnen een vergoeding ontvangen als je via onze links een hostingpakket afsluit. Dit beïnvloedt onze beoordelingen niet. Prijzen zijn indicatief (april 2026).*
+*HostingWijzer.nl is onafhankelijk. We kunnen een vergoeding ontvangen als je via onze links een hostingpakket afsluit. Dit beïnvloedt onze beoordelingen niet. Prijzen zijn indicatief (april 2026).*
 
 ---
 
@@ -89,12 +89,12 @@ Voor de meeste websites is VPS hosting voldoende. Kies cloud hosting als je éch
 
 Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
 
-[Bekijk alle hosting aanbiedingen →](https://TRADETRACKER-HOSTING-VERGELIJK-URL)
+[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
 
-[Start met Antagonist hosting →](https://DAISYCON-ANTAGONIST-URL)
+[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
 
-[Start met TransIP hosting →](https://DAISYCON-TRANSIP-URL)
+[Start met TransIP hosting →](https://www.transip.nl/vps/)
 
 **Handige tools (via Amazon.nl):**
-- [WordPress handboek voor beginners](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
-- [Website laten groeien — SEO gids](https://www.amazon.nl/dp/B0PLACEHOLDER?tag=JOUW-TAG)
+- [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)
+- [Website laten groeien — SEO gids](https://www.amazon.nl/s?k=seo+website+groeien&tag=vergelijk05-21)
