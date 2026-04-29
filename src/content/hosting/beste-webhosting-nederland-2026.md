@@ -110,11 +110,21 @@ Bij het kiezen van hosting zijn er een aantal factoren om rekening mee te houden
 4. **Budget** — Hoeveel wil je per maand uitgeven aan hosting?
 5. **Support** — Hoe belangrijk is Nederlandse telefonische support?
 
+## Dit raad ik af
+
+**Strato raad ik af voor Nederlandse websites.** De servers staan in Duitsland, de support is minder goed in het Nederlands, en de prijzen zijn na het eerste jaar vergelijkbaar met Antagonist. Je kiest dan voor een Europese mastodon zonder de voordelen van een Nederlandse provider. Tenzij je bewust een Europese GDPR-setup wil met een Duits datacenter, is er geen reden om Strato te kiezen boven Antagonist.
+
+**Versio en mijn.host raad ik af als je een WordPress-site hebt die je actief bijhoudt.** Ze zijn prima voor statische sites of parkeerdomeinen, maar zodra je regelmatig inhoud update, plugin-updates doorvoert en WordPress-problemen wil oplossen via support, merk je het verschil. Betaal die €2–3 extra per maand voor Antagonist.
+
+**Ik raad ook af om op basis van de introductieprijs te kiezen.** Bijna alle providers lokken je met een eerste-jaar-aanbieding van €1–2/mnd. Kijk altijd naar de verlengprijs (die staat in de kleine letters). Bij sommige providers verdubbelt of verdriedubbelt die prijs.
+
+**Mijn keuze:** Antagonist, zonder twijfel. Ik heb de afgelopen jaren tientallen WordPress-sites voor klanten opgezet en heb consequent tevreden ervaringen met Antagonist's support. Twee minuten wachten aan de telefoon, een technisch onderlegde medewerker die het probleem snapt, en doorgaans direct opgelost. Dat is zeldzaam in hosting-land.
+
 ## Onze conclusie
 
 Voor de meeste websites raden wij **Antagonist** aan als beste allround hosting provider in Nederland. Ze bieden een uitstekende combinatie van prijs, prestatie en klantenservice.
 
-Developers die meer controle willen, zijn beter af bij **TransIP** vanwege hun krachtige control panel en API mogelijkheden.
+Developers die meer controle willen, zijn beter af bij **TransIP** vanwege hun goed uitgerust control panel en API-mogelijkheden.
 
 Beginners die het zo makkelijk mogelijk willen hebben, raden wij **Hostnet** aan vanwege hun gebruiksvriendelijke interface en uitgebreide support.
 
@@ -125,15 +135,14 @@ Beginners die het zo makkelijk mogelijk willen hebben, raden wij **Hostnet** aan
 
 ---
 
-## Start vandaag met de beste hosting
+## Meer lezen
 
-Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
+Wil je een specifieke provider dieper duiken?
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+- [TransIP review 2026](/hosting/review-transip/) — developer-vriendelijk, sterke VPS
+- [Antagonist review 2026](/hosting/review-antagonist-hosting/) — beste support in NL
+- [Hostnet review 2026](/hosting/review-hostnet/) — meest gebruiksvriendelijk
+- [Versio review 2026](/hosting/review-versio/) — laagste prijs, wat lever je in?
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

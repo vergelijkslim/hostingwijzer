@@ -152,6 +152,14 @@ Antagonist biedt beperkte VPS-opties. Als je ooit naar VPS wilt doorgroeien, bou
 
 ---
 
+## Dit raad ik af
+
+**Ik raad af om TransIP te kiezen als je shared hosting wilt voor een simpele WordPress-site.** TransIP's echte meerwaarde zit in VPS en domeinen. Het shared hosting pakket is in orde, maar Antagonist is op dat vlak beter: snellere laadtijden voor WordPress, betere LiteSpeed-optimalisatie, en significant betere support bij WordPress-problemen. Voor shared hosting betaal je bij TransIP deels voor features (API, uitgebreid DNS-beheer) die je waarschijnlijk nooit gebruikt.
+
+**Ik raad ook af om op basis van prijs alleen te kiezen.** TransIP is iets goedkoper op het instapniveau, maar zodra je een probleem hebt en TransIP's chat vol zit (en het geen kantooruren zijn), betaal je de prijs van die €2–3 besparing in frustratie. Antagonist's telefonische support — die je bij TransIP helemaal niet hebt — is het geld waard.
+
+**Mijn keuze:** Voor een WordPress-site voor mezelf of een klant: Antagonist. Voor alles waarbij ik zelf de server wil beheren, meerdere domeinen manage, of met een API wil werken: TransIP. Die grens is voor mij duidelijk. Als je twijfelt aan welke kant je valt: kies Antagonist — je kunt altijd nog migreren naar TransIP als je behoefte aan meer controle groeit.
+
 ## Eindoordeel
 
 **Antagonist** is de betere keuze voor de meeste gebruikers die een betrouwbare, goed ondersteunde hosting willen zonder zich te verdiepen in technische details.
