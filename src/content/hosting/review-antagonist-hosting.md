@@ -88,6 +88,14 @@ Inclusief bij alle pakketten: gratis SSL, dagelijkse backups, gratis domein (1e 
 - Beperkte opslagruimte bij Starter pakket
 - Geen 24/7 telefonische support
 
+## Dit raad ik af
+
+**Het Premium-pakket (€10/mnd) raad ik af voor de meeste gebruikers.** Onbeperkte websites klinkt aantrekkelijk, maar tenzij je meer dan 5 websites host, betaal je €5/mnd extra voor iets wat je niet gebruikt. Het Plus-pakket biedt ruim voldoende voor 95% van de mensen.
+
+**Antagonist raad ik af als je een VPS nodig hebt of serieus gaat schalen.** De VPS-opties bestaan niet — Antagonist is puur shared hosting. Zodra je site groeit en je meer controle nodig hebt, moet je alsnog migreren. Dan kun je beter meteen bij TransIP beginnen en hun VPS nemen zodra je die nodig hebt.
+
+**Mijn keuze:** Voor een WordPress-site voor een MKB-klant of eigen blog kies ik Antagonist zonder aarzelen. De telefonische support alleen al — gemiddeld 2 minuten wachttijd — is het prijsverschil waard. Ik heb te vaak klanten zien worstelen met hosting-problemen omdat ze bij een goedkopere provider zaten. Bij Antagonist bel je op en je probleem wordt opgelost.
+
 ## Ons oordeel: 8.5/10
 
 Antagonist is een uitstekende keuze voor iedereen die waarde hecht aan betrouwbaarheid en goede klantenservice. De prijzen zijn eerlijk voor wat je krijgt, en de support is werkelijk een klasse apart in de Nederlandse hosting markt.

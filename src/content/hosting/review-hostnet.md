@@ -167,6 +167,14 @@ Ten opzichte van concurrenten zoals Antagonist en TransIP ontbreekt:
 | Beveiliging | 8/10 |
 | **Totaalscore** | **8/10** |
 
+## Dit raad ik af
+
+**Hostnet raad ik af als prijs-kwaliteit je prioriteit is.** Je betaalt bij Hostnet zo'n 20–40% meer dan bij Antagonist voor vergelijkbare pakketten, terwijl de snelheid (7/10) lager scoort. Dat prijsverschil rechtvaardigt zich niet op basis van performance. Hostnet's meerwaarde zit in de gebruiksvriendelijkheid en betrouwbaarheid — als dat niet je topprioriteit is, ga dan naar Antagonist.
+
+**Het Business Complete-pakket raad ik af voor ZZP'ers en kleine bedrijven.** Dat pakket kost €15–€20/mnd en is voor de meeste kleine sites te royaal. Tenzij je actief meerdere websites beheert, overschat je je eigen groei hier. Begin met Basic of Basic+ — je kunt altijd upgraden.
+
+**Mijn keuze:** Als iemand me vraagt voor welke hosting ze moeten gaan en ze zijn geen technicus, zeg ik Antagonist in plaats van Hostnet. Antagonist heeft vergelijkbare gebruiksvriendelijkheid, betere snelheid én lagere prijs. Maar als iemand écht niet met techniek wil bezig zijn en gewoon wil dat het altijd werkt — dan is Hostnet oké. De 9/10 uptime en 8/10 klantenservice zijn er echt.
+
 ## Conclusie
 
 Hostnet is niet de goedkoopste en niet de snelste hosting provider van Nederland — maar het is wel een van de meest betrouwbare. Voor beginners en kleine ondernemers die zekerheid en goede support willen, is Hostnet een uitstekende keuze.

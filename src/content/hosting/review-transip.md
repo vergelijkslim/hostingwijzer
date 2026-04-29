@@ -89,7 +89,7 @@ TransIP is ook een van de populairste domeinregistrars in Nederland:
 
 **Pluspunten:**
 - Uitstekend eigen control panel
-- Krachtige VPS met NVMe SSD's
+- VPS met NVMe SSD's: snelste opslag in deze prijsklasse
 - REST API voor automatisering
 - Competitieve prijzen
 - Alles-in-één platform (hosting, VPS, domeinen, e-mail)
@@ -99,6 +99,14 @@ TransIP is ook een van de populairste domeinregistrars in Nederland:
 - Minder geschikt voor absolute beginners
 - Chat support kan druk zijn
 - Shared hosting is minder onderscheidend
+
+## Dit raad ik af
+
+**Het Business-pakket van TransIP Shared Hosting raad ik af voor starters en kleine sites.** Begin met het Personal-pakket (€4/mnd). Het Business-pakket (€8/mnd) voegt meerdere websites en meer opslag toe — zinloos als je één site hebt. TransIP's kracht zit in VPS, niet in shared hosting. Als je shared hosting wilt zonder te veel configuratie, is Antagonist eerlijk gezegd de betere keuze.
+
+**TransIP als geheel raad ik af voor absolute beginners.** Het control panel is goed, maar de aanpak is "doe-het-zelf". Er is geen telefonische support, geen website builder, geen begeleidende onboarding. Als je voor het eerst een website bouwt en verwacht dat je een telefoonnummer kunt bellen als er iets misgaat: kijk naar Hostnet of Antagonist.
+
+**Mijn keuze:** Voor een VPS in Nederland zou ik TransIP kiezen boven vrijwel iedereen. De prijs-kwaliteit op hun X4-plan (€15/mnd voor 2 vCPU, 4 GB RAM, 100 GB NVMe) is moeilijk te overtreffen. Maar voor een simpele WordPress-site? Dan neem ik Antagonist — makkelijker en betere support.
 
 ## Ons oordeel: 8/10
 

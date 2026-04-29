@@ -141,6 +141,14 @@ Versio is een budget provider — dat betekent compromissen:
 | Beveiliging | 7/10 |
 | **Totaalscore** | **7/10** |
 
+## Dit raad ik af
+
+**Versio raad ik af als je een WordPress-site hebt die je serieus neemt.** De snelheid (6,5/10) en klantenservice (6,5/10) zijn te middelmatig voor iets waar je inkomsten van afhankelijk zijn. Het prijsvoordeel van het eerste jaar verdwijnt bij verlenging — je betaalt dan bijna hetzelfde als Antagonist, maar met slechtere prestaties.
+
+**De managed WordPress-pakketten van Versio raad ik af.** Die kosten vergelijkbaar met Antagonist's reguliere hosting, maar zonder de betere support en snelheid. Je betaalt dan de prijs van een premium provider voor een budget-ervaring.
+
+**Mijn keuze:** Versio is prima voor een tijdelijk testproject of een statische site die je voor een jaar opzet en daarna vergeet. Voor die situatie: gewoon nemen. Maar voor een zakelijke site die je de komende jaren bijhoudt, geef ik de voorkeur aan Antagonist. Die €2–3 per maand extra verdient zichzelf terug bij de eerste keer dat je de telefoon oppakt en binnen 2 minuten een medewerker aan de lijn hebt.
+
 ## Conclusie
 
 Versio doet precies wat het belooft: betaalbare hosting met acceptabele prestaties. Als je net begint en zo min mogelijk wil uitgeven, is Versio een redelijke keuze. Maar let altijd op de verlengprijs na het eerste jaar — die maakt het verschil met concurrenten kleiner.
