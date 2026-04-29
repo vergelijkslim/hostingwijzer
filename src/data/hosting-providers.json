@@ -90,7 +90,7 @@
       "naam": "TransIP",
       "logo_url": "/images/logos/transip.svg",
       "website": "https://www.transip.nl",
-      "affiliate_url": "https://www.transip.nl/partner/vergelijk05-21",
+      "affiliate_url": "https://www.transip.nl/webhosting/?ref=vergelijk05-21",
       "badges": ["beste-koop", "meest-populair-nl"],
       "beoordeling": {
         "overall": 9.0,
@@ -163,7 +163,7 @@
       "naam": "Hostnet",
       "logo_url": "/images/logos/hostnet.svg",
       "website": "https://www.hostnet.nl",
-      "affiliate_url": "https://www.hostnet.nl/partner/vergelijk05-21",
+      "affiliate_url": "https://www.hostnet.nl/webhosting/?partner=vergelijk05-21",
       "badges": [],
       "beoordeling": {
         "overall": 8.5,

@@ -164,4 +164,4 @@ Een server in Amsterdam geeft je Nederlandse bezoekers een snellere laadtijd dan
 - **Cloud hosting:** voor websites die snel moeten kunnen schalen.
 - **Dedicated server:** voor enterprise-toepassingen. Vrijwel nooit nodig voor mkb.
 
-Twijfel je nog? Gebruik onze [hostingvergelijker](/vergelijker) om providers op jouw criteria te filteren, of bekijk onze top 8: [Beste Webhosting Nederland 2026](/hosting/beste-webhosting-nederland-2026).
+Twijfel je nog? Gebruik onze [hostingvergelijker](/tools/vergelijk/) om providers op jouw criteria te filteren, of bekijk onze top 8: [Beste Webhosting Nederland 2026](/hosting/beste-webhosting-nederland-2026).
