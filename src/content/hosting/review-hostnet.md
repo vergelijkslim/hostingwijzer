@@ -179,13 +179,11 @@ Wil je meer waar voor je geld? Dan bieden Antagonist (betere prijs-kwaliteit) of
 
 ---
 
-## Start vandaag met Hostnet
+## Vergelijk alle hosting providers
 
-Bekijk de actuele Hostnet pakketten en kies het plan dat bij jou past:
+Wil je Hostnet afzetten tegen andere Nederlandse hosting providers? Bekijk ons volledige overzicht:
 
-[Bekijk Hostnet pakketten →](https://www.hostnet.nl/webhosting)
-
-[Vergelijk alle hosting providers →](https://www.hostnet.nl/webhosting)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Meer lezen:**
 - [Beste webhosting Nederland 2026](/hosting/beste-webhosting-nederland-2026/) — Vergelijk alle providers
