@@ -6,7 +6,7 @@ type: "gids"
 publishDate: 2026-04-24
 author: "Redactie HostingWijzer"
 featured: false
-affiliateLinks: ["hosting-vergelijk"]
+affiliateLinks: ["hosting-vergelijk", "vps-vergelijk", "wordpress-hosting"]
 keywords:
   - welke hosting heb ik nodig
   - hosting advies

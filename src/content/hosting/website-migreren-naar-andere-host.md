@@ -5,7 +5,7 @@ niche: "hosting"
 type: "gids"
 publishDate: 2026-04-17
 author: "Redactie HostingWijzer"
-affiliateLinks: ["hosting-vergelijk"]
+affiliateLinks: ["hosting-vergelijk", "transip", "amazon-extern-ssd"]
 keywords:
   - website migreren
   - hosting verhuizen

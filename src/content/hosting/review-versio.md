@@ -6,7 +6,7 @@ type: "review"
 publishDate: 2026-04-23
 author: "Redactie HostingWijzer"
 featured: false
-affiliateLinks: ["hosting-vergelijk"]
+affiliateLinks: ["hosting-vergelijk", "antagonist", "domein-registreren"]
 keywords:
   - versio review
   - versio hosting review
