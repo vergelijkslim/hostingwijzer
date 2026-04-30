@@ -55,6 +55,47 @@ const links: AffiliateLink[] = [
     commissionType: 'cpa',
     commissionValue: '€5-€15 per domein (na TradeTracker registratie)',
   },
+  {
+    id: 'transip',
+    network: 'direct',
+    merchant: 'TransIP',
+    url: 'https://www.transip.nl/webhosting/',
+    niche: 'hosting',
+    label: 'TransIP hosting bekijken',
+    commissionType: 'cpa',
+    commissionValue: '€10-€40 per aanmelding (na TradeTracker registratie)',
+  },
+  {
+    id: 'antagonist',
+    network: 'direct',
+    merchant: 'Antagonist',
+    url: 'https://www.antagonist.nl/webhosting',
+    niche: 'hosting',
+    label: 'Antagonist hosting bekijken',
+    commissionType: 'cpa',
+    commissionValue: '€15-€60 per aanmelding (na Daisycon registratie)',
+  },
+  // Amazon PartnerNet (tag: vergelijk05-21)
+  {
+    id: 'amazon-yubikey',
+    network: 'amazon',
+    merchant: 'Amazon.nl',
+    url: 'https://www.amazon.nl/dp/B08DHL1YDL', // YubiKey 5C NFC
+    niche: 'hosting',
+    label: 'YubiKey hardware beveiligingssleutel bij Amazon',
+    commissionType: 'cps',
+    commissionValue: '3-10% per verkoop',
+  },
+  {
+    id: 'amazon-extern-ssd',
+    network: 'amazon',
+    merchant: 'Amazon.nl',
+    url: 'https://www.amazon.nl/dp/B0BLJVFM5K', // Samsung T7 Shield 1TB externe SSD
+    niche: 'hosting',
+    label: 'Samsung T7 externe SSD voor backups bij Amazon',
+    commissionType: 'cps',
+    commissionValue: '3-10% per verkoop',
+  },
 ];
 
 registerLinks(links);

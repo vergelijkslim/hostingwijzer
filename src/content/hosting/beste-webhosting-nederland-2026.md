@@ -6,7 +6,7 @@ type: "vergelijking"
 publishDate: 2026-04-17
 author: "Redactie HostingWijzer"
 featured: true
-affiliateLinks: ["hosting-vergelijk", "wordpress-hosting"]
+affiliateLinks: ["hosting-vergelijk", "wordpress-hosting", "amazon-extern-ssd"]
 keywords:
   - beste webhosting nederland
   - hosting vergelijken
