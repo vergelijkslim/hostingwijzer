@@ -5,7 +5,7 @@ niche: "hosting"
 type: "gids"
 publishDate: 2026-04-17
 author: "Redactie HostingWijzer"
-affiliateLinks: ["domein-registreren"]
+affiliateLinks: ["domein-registreren", "hosting-vergelijk"]
 keywords:
   - domein registreren
   - domeinnaam kiezen

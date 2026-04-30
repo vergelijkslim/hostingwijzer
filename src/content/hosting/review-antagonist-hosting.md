@@ -5,7 +5,7 @@ niche: "hosting"
 type: "review"
 publishDate: 2026-04-17
 author: "Redactie HostingWijzer"
-affiliateLinks: ["wordpress-hosting"]
+affiliateLinks: ["wordpress-hosting", "antagonist", "hosting-vergelijk"]
 keywords:
   - antagonist review
   - antagonist hosting
