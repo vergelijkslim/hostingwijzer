@@ -86,6 +86,14 @@ Als je website gehackt is:
 6. **Dicht het lek** — Update software, verwijder kwetsbare plugins
 7. **Monitor** — Houd je site extra goed in de gaten de komende weken
 
+## Dit raad ik af
+
+**Een betaald SSL-certificaat kopen voor een gewone website raad ik af.** Let's Encrypt biedt identieke 256-bit encryptie als certificaten van €50-200 per jaar. Betaalde certificaten voegen voor vrijwel geen enkele website echte veiligheidswaarde toe. De enige uitzondering: OV/EV-certificaten voor financiële instellingen die de bedrijfsnaam in de browser-balk willen tonen.
+
+**Beveiliging door obscurity raad ik af als primaire strategie.** Je WordPress versienummer verbergen, admin-URL wijzigen — dat zijn leuke extra's, maar het is geen echte beveiliging. Hackers scannen systematisch op kwetsbaarheden in plugins en thema's. Sterke wachtwoorden, tweefactorauthenticatie en up-to-date plugins zijn 10× effectiever.
+
+**Mijn keuze:** Wordfence (gratis versie) op WordPress, 2FA op je admin-account, en een host die automatische malware-scanning heeft (Antagonist doet dit standaard). Die drie dingen doen meer dan alle obscurity-trucs samen.
+
 
 ---
 
@@ -97,11 +105,7 @@ Als je website gehackt is:
 
 Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

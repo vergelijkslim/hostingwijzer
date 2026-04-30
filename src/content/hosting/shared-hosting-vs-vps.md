@@ -101,6 +101,14 @@ Een belangrijke keuze bij VPS is of je voor managed of unmanaged gaat:
 
 **Unmanaged VPS** — Je beheert alles zelf via SSH. Goedkoper, maar je hebt Linux kennis nodig. Geschikt voor developers en systeembeheerders.
 
+## Dit raad ik af
+
+**Ik raad af om direct voor VPS te gaan als je net begint.** VPS geeft je meer controle, maar ook meer verantwoordelijkheid: server-onderhoud, beveiligingsupdates, serverconfiguratiefouten — dat zijn problemen die bij shared hosting niet bestaan. Begin altijd met shared hosting. Je kunt altijd opschalen.
+
+**Unmanaged VPS raad ik af als je geen Linux-systeembeheerder bent.** Unmanaged VPS is goedkoper maar je bent zelf verantwoordelijk voor updates, security-patches en server-configuratie. Eén verkeerde instelling en je site is kwetsbaar of offline. Betaal die €5–€10 extra per maand voor een managed optie — het is het waard.
+
+**Mijn keuze:** Shared hosting bij Antagonist als startpunt. TransIP X4 VPS (€15/mnd) als je groeit. Die stap maak ik pas als een site structureel boven de 2.000 bezoekers per dag komt of als ik meerdere middelgrote sites op één server wil draaien.
+
 ## Onze aanbeveling
 
 Start met **shared hosting** als je een nieuwe, kleine website bouwt. Zodra je merkt dat je website trager wordt of je meer controle nodig hebt, stap dan over naar een **managed VPS**.
@@ -118,11 +126,7 @@ De meeste Nederlandse providers maken het overstappen eenvoudig — vaak kun je 
 
 Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

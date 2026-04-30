@@ -156,6 +156,14 @@ Een server in Amsterdam geeft je Nederlandse bezoekers een snellere laadtijd dan
 
 ---
 
+## Dit raad ik af
+
+**Een dedicated server voor een MKB-website raad ik af.** Dedicated servers kosten €80–€200/maand en zijn voor nagenoeg geen enkel MKB-bedrijf nodig. Een VPS van €15–€30/maand doet hetzelfde werk. De enige reden voor een dedicated server is als je extreem hoge compliance-eisen hebt (bank, healthcare) of echt een enorme hoeveelheid verkeer. Dat is bij 99% van de MKB niet het geval.
+
+**Ik raad ook af om een goedkope shared hosting te nemen voor een WooCommerce webshop met 50+ producten.** WooCommerce is resourcehungrig. Op shared hosting gaat je webshop langzamer laden bij piekverkeer, wat direct invloed heeft op conversies. Neem dan managed WordPress-hosting of een instap-VPS.
+
+**Mijn keuze:** Shared hosting bij Antagonist voor 90% van de sites. Managed VPS bij TransIP zodra je meer controle nodig hebt of je site meer dan 5.000 bezoekers per maand trekt. Die grens is voor mij het schakelpunt.
+
 ## Samenvatting: welk hosting type past bij jou?
 
 - **Shared hosting:** voor 90% van alle websites. Goedkoop, eenvoudig, betrouwbaar.

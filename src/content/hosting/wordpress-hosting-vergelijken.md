@@ -96,9 +96,17 @@ Hostnet maakt het installeren en beheren van WordPress zeer eenvoudig voor begin
 4. **Controleer backup frequentie** — Dagelijkse backups zijn het minimum.
 5. **Test de support** — Stel een WordPress-specifieke vraag voor je tekent.
 
+## Dit raad ik af
+
+**Kinsta raad ik af voor de meeste WordPress-sites in Nederland.** Kinsta kost €25–€100/maand voor een pakket dat je bij Antagonist voor €5–€10/maand kunt draaien. Die 5x hogere prijs is alleen gerechtvaardigd als je duizenden bezoekers per dag hebt en de extra snelheid direct conversies beïnvloedt. Voor de meeste MKB-sites of blogs is Kinsta gewoon te duur.
+
+**Ik raad ook af om voor WordPress-specifieke hosting te kiezen puur vanwege de naam.** Veel providers bieden "WordPress-hosting" aan dat in werkelijkheid gewoon shared hosting is met een WordPress-vlag. Check of er daadwerkelijk LiteSpeed, staging-omgeving en automatische backups bij zitten — dat zijn de features die het verschil maken.
+
+**Mijn keuze:** Antagonist voor WordPress-sites tot circa 2.000 bezoekers/dag. Het LiteSpeed-engine, de one-click staging en de telefonische WordPress-support zijn het geld waard. Voor grotere sites: vergelijk TransIP VPS (meer controle, vergelijkbare prijs) met de managed WordPress-opties.
+
 ## Onze conclusie
 
-Voor de meeste WordPress sites is **Antagonist** de beste keuze qua prijs-kwaliteit. Heb je meer snelheid nodig? Kies dan **Vimexx** met LiteSpeed. En voor enterprise-level WordPress sites is **Kinsta** de gouden standaard, al betaal je daar ook een premium prijs voor.
+Voor de meeste WordPress sites is **Antagonist** de beste keuze qua prijs-kwaliteit. Heb je meer snelheid nodig? Kies dan **Vimexx** met LiteSpeed. En voor enterprise-level WordPress sites is **Kinsta** de gouden standaard, al betaal je daarvoor een significant hogere prijs.
 
 
 ---
@@ -107,15 +115,11 @@ Voor de meeste WordPress sites is **Antagonist** de beste keuze qua prijs-kwalit
 
 ---
 
-## Start vandaag met de beste hosting
+## Vergelijk WordPress hosting providers
 
-Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
+Bekijk alle Nederlandse WordPress hosting opties in één overzicht:
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

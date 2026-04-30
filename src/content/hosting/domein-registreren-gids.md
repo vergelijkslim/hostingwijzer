@@ -74,6 +74,13 @@ Je kunt je domein bij dezelfde provider als je hosting registreren, of bij een a
 - Soms goedkoper
 - Minder afhankelijk van één provider
 
+## Dit raad ik af
+
+**Een buitenlandse registrar kiezen voor een .nl domein raad ik af.** .nl domeinen vallen onder SIDN (de Nederlandse registratie-organisatie). Een Nederlandse registrar zoals TransIP of Antagonist kent de regels, biedt Nederlandstalige support, en heeft directe lijnen als er iets misgaat. Een GoDaddy of Namecheap .nl domein is technisch prima, maar als je support nodig hebt bij een probleem merk je het verschil.
+
+**Defensieve domeinnamen kopen (je-merk.com, je-merk.net, je-merk.org) raad ik af als je net begint.** Je betaalt jaarlijks €10-15 per domein voor domeinen die je waarschijnlijk nooit gebruikt. Begin met alleen het domein dat je écht nodig hebt. Koop extra extensies pas als je merk echt de moeite waard is om te beschermen.
+
+**Mijn keuze:** TransIP voor domeinregistratie. Laagste .nl prijs, gratis bij hosting, en hun domeinbeheer is overzichtelijk. Combineer domein en hosting bij dezelfde provider als je niet technisch bent — dat bespaart DNS-gedoe.
 
 ---
 
@@ -85,11 +92,7 @@ Je kunt je domein bij dezelfde provider als je hosting registreren, of bij een a
 
 Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

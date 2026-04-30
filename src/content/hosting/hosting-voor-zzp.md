@@ -195,6 +195,14 @@ Als je een website voor de lange termijn bouwt, is WordPress via Nederlandse hos
 
 ---
 
+## Dit raad ik af
+
+**Wix of Squarespace voor de lange termijn raad ik af voor zzp'ers.** Je betaalt €15-25 per maand voor een website die je nooit echt bezit. Als je ooit wilt migreren, is dat een pijnlijk handmatig proces. Met WordPress via shared hosting betaal je €3-5 per maand en heb je volledige controle over je content en code. Na drie jaar heb je €500-€700 bespaard.
+
+**Gratis hosting raad ik absoluut af voor professioneel gebruik.** Gratis hosting heeft advertenties op je site, traag laden, geen eigen domeinnaam, en support die non-existent is. Eén slechte review van een potentiële klant omdat je site crasht of er onprofessioneel uitziet kost meer dan een jaar hosting.
+
+**Mijn keuze:** Antagonist voor zzp'ers zonder technische achtergrond — hun telefonische support in het Nederlands is uniek en de moeite waard. TransIP voor zzp'ers die technisch onderlegd zijn en willen besparen. Beide zijn prima keuzes; het verschil zit in het supportmodel.
+
 ## Conclusie
 
 Voor de meeste zzp'ers is **Antagonist** onze eerste aanbeveling: betrouwbaar, betaalbaar, en met goede Nederlandstalige support.

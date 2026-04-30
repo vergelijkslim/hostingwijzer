@@ -93,6 +93,14 @@ Naast de hosting zelf zijn er nog andere kosten:
 4. **Gebruik gratis SSL** — Let's Encrypt is prima voor de meeste websites
 5. **Vergelijk** — Neem de tijd om providers te vergelijken voor je kiest
 
+## Dit raad ik af
+
+**De goedkoopste introductieprijs kiezen zonder de verlengprijs te checken raad ik af.** Providers zoals Versio adverteren met €1,99/mnd maar de verlengprijs na het eerste jaar is €6-8/mnd. Over drie jaar betaal je dus meer dan bij een provider die €4/mnd vraagt zonder introductiekorting. Reken altijd de totaalkosten over 2-3 jaar.
+
+**Maandelijks afrekenen raad ik af.** Vrijwel elke provider rekent 20-30% meer bij maandelijkse betaling versus jaarlijks. Als je zeker weet dat je de website een jaar gaat gebruiken (en dat is bijna altijd zo), betaal jaarlijks.
+
+**Mijn keuze:** Antagonist middenpakket (~€5/mnd bij jaarlijks betalen) voor de meeste websites. Inclusief LiteSpeed caching, dagelijkse backups en gratis SSL. De verlengprijs is eerlijk — geen vervelende verrassingen na het eerste jaar.
+
 
 ---
 
@@ -104,11 +112,7 @@ Naast de hosting zelf zijn er nog andere kosten:
 
 Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

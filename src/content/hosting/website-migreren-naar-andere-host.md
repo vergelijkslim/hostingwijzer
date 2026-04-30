@@ -98,6 +98,14 @@ Voor WordPress sites zijn er specifieke tools die het proces vereenvoudigen:
 - **E-mail vergeten** — Denk aan MX-records als je e-mail via je domein loopt
 - **Oude hosting te snel opzeggen** — Wacht tot alles stabiel draait op de nieuwe server
 
+## Dit raad ik af
+
+**DNS wijzigen zonder eerst op de nieuwe server te testen raad ik sterk af.** Dit is de meest gemaakte fout bij migraties. Als de nieuwe server een probleem heeft met je database of configuratie, zit je bezoekers met een kapotte site. Gebruik het hosts-bestand om lokaal te testen — dat kost vijf minuten en bespaart potentieel uren herstelwerk.
+
+**De backup "aan de nieuwe host overlaten" raad ik af.** Sommige providers bieden gratis migratie aan. Prima, gebruik dat. Maar maak zelf ook een backup vóór de migratie — ongeacht wat de provider belooft. Als er iets misgaat, heb jij de enige kopie die zeker correct is.
+
+**Mijn keuze:** All-in-One WP Migration plugin voor WordPress-sites — de simpelste manier om te exporteren en importeren. Gebruik de gratis migratieservice van je nieuwe host als die aangeboden wordt (Antagonist en SiteGround doen dit). Combineer beide: laat hen de technische migratie doen, maar houd zelf een backup achter de hand.
+
 
 ---
 
@@ -109,11 +117,7 @@ Voor WordPress sites zijn er specifieke tools die het proces vereenvoudigen:
 
 Vergelijk de beste Nederlandse hosting providers en kies het pakket dat bij jouw website past:
 
-[Bekijk alle hosting aanbiedingen →](https://www.hostnet.nl/webhosting)
-
-[Start met Antagonist hosting →](https://www.antagonist.nl/webhosting/)
-
-[Start met TransIP hosting →](https://www.transip.nl/vps/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools (via Amazon.nl):**
 - [WordPress handboek voor beginners](https://www.amazon.nl/s?k=wordpress+voor+beginners&tag=vergelijk05-21)

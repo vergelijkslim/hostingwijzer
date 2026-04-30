@@ -146,6 +146,14 @@ Voor professionele email hosting zijn drie DNS-records essentieel om e-mail deli
 
 Alle genoemde providers helpen je deze records automatisch in te stellen.
 
+## Dit raad ik af
+
+**Webhosting e-mail als zakelijke e-mail voor een team raad ik af.** De e-mail die inbegrepen is bij shared hosting werkt voor één persoon, maar is niet gebouwd voor meerdere medewerkers. Gedeelde agenda, contacten, en betere spam filtering — dat krijg je pas bij Microsoft 365 of Google Workspace. Zodra je met twee of meer mensen e-mailt, is de overstap de €5/maand waard.
+
+**Google Workspace kiezen puur voor e-mail terwijl je team al Windows en Office gebruikt raad ik af.** Dan betaal je voor de Google apps die je niet gebruikt (Docs, Meet, Drive) en moet iedereen leren werken in een nieuwe omgeving. Microsoft 365 is in dat geval de logischere keuze.
+
+**Mijn keuze:** Microsoft 365 Business Basic (€5,10/mnd/gebruiker) voor elk team met 2+ mensen. Voor een eenmanszaak of zzp'er: de gratis e-mail bij Antagonist of TransIP hosting is prima — één mailbox, simpel, werkt.
+
 ## Onze aanbeveling
 
 Voor de meeste Nederlandse bedrijven is **Microsoft 365 Business Basic** (€5,10/maand/gebruiker) de beste keuze: vertrouwde interface, uitstekende betrouwbaarheid, en alles wat je nodig hebt.
@@ -160,9 +168,7 @@ Heb je maar één mailbox nodig en wil je kosten besparen? Kies dan voor de e-ma
 
 ## Vergelijk hosting met e-mail inbegrepen
 
-[Bekijk hosting pakketten met e-mail →](https://www.hostnet.nl/webhosting)
-
-[Domein registreren inclusief e-mail →](https://www.transip.nl/domeinnaam/)
+[Vergelijk alle Nederlandse hosting providers →](/hosting/beste-webhosting-nederland-2026/)
 
 **Handige tools:**
 - [Zakelijk e-mailbeheer tips](https://www.amazon.nl/s?k=zakelijke+email+beveiliging&tag=vergelijk05-21)
